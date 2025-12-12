@@ -340,6 +340,17 @@ section {
   justify-content: center;
 }
 
+/* Header Right (mobile lang + menu toggle) */
+.header-right {
+  display: flex;
+  align-items: center;
+  gap: var(--space-4);
+}
+
+.mobile-header-lang {
+  display: flex;
+}
+
 /* Mobile Menu Toggle */
 .menu-toggle {
   display: flex;
@@ -1281,6 +1292,12 @@ section {
   margin-top: var(--space-10);
 }
 
+.bank-transfer.bank-transfer-main {
+  margin-top: 0;
+  background: rgba(255, 255, 255, 0.15);
+  padding: var(--space-10);
+}
+
 .bank-transfer h3 {
   color: var(--white);
   margin-bottom: var(--space-6);
@@ -1291,7 +1308,7 @@ section {
   border-radius: var(--radius-lg);
   padding: var(--space-6);
   text-align: left;
-  max-width: 400px;
+  max-width: 450px;
   margin: 0 auto;
 }
 

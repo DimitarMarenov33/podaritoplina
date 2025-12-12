@@ -561,36 +561,37 @@
   };
 
   // ==========================================================================
-  // Copy IBAN Button
+  // Copy Buttons (IBAN, Recipient, etc.)
   // ==========================================================================
 
-  const CopyIBAN = {
-    button: null,
-    ibanValue: null,
-
+  const CopyButtons = {
     init() {
-      this.button = document.getElementById('copy-iban-btn');
-      this.ibanValue = document.getElementById('iban-value');
-
-      if (!this.button || !this.ibanValue) return;
-
-      this.button.addEventListener('click', () => this.copyToClipboard());
+      this.setupCopyButton('copy-iban-btn', 'iban-value');
+      this.setupCopyButton('copy-recipient-btn', 'recipient-value');
     },
 
-    async copyToClipboard() {
-      const iban = this.ibanValue.textContent;
-      const copyText = this.button.querySelector('.copy-text');
+    setupCopyButton(buttonId, valueId) {
+      const button = document.getElementById(buttonId);
+      const valueEl = document.getElementById(valueId);
+
+      if (!button || !valueEl) return;
+
+      button.addEventListener('click', () => this.copyToClipboard(button, valueEl));
+    },
+
+    async copyToClipboard(button, valueEl) {
+      const text = valueEl.textContent;
+      const copyText = button.querySelector('.copy-text');
 
       try {
-        await navigator.clipboard.writeText(iban);
-        this.showSuccess(copyText);
+        await navigator.clipboard.writeText(text);
+        this.showSuccess(button, copyText);
       } catch (err) {
-        // Fallback for older browsers
-        this.fallbackCopy(iban, copyText);
+        this.fallbackCopy(text, button, copyText);
       }
     },
 
-    fallbackCopy(text, copyText) {
+    fallbackCopy(text, button, copyText) {
       const textArea = document.createElement('textarea');
       textArea.value = text;
       textArea.style.position = 'fixed';
@@ -600,7 +601,7 @@
 
       try {
         document.execCommand('copy');
-        this.showSuccess(copyText);
+        this.showSuccess(button, copyText);
       } catch (err) {
         copyText.textContent = 'Грешка';
         setTimeout(() => {
@@ -611,14 +612,14 @@
       document.body.removeChild(textArea);
     },
 
-    showSuccess(copyText) {
+    showSuccess(button, copyText) {
       const originalText = copyText.textContent;
       copyText.textContent = 'Копирано!';
-      this.button.classList.add('copied');
+      button.classList.add('copied');
 
       setTimeout(() => {
         copyText.textContent = originalText;
-        this.button.classList.remove('copied');
+        button.classList.remove('copied');
       }, 2000);
     }
   };
@@ -637,7 +638,7 @@
     SnowAnimation.init();
     HeroCarousel.init();
     LazyLoad.init();
-    CopyIBAN.init();
+    CopyButtons.init();
 
     // Expose share function globally for potential button use
     window.shareWebsite = () => Share.share();

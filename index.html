@@ -72,11 +72,17 @@
         </div>
       </nav>
 
-      <button class="menu-toggle" id="menuToggle" aria-label="Toggle menu" aria-expanded="false">
-        <span></span>
-        <span></span>
-        <span></span>
-      </button>
+      <div class="header-right">
+        <div class="lang-switcher mobile-header-lang">
+          <button type="button" data-lang="bg" class="lang-btn active" aria-label="Bulgarian">BG</button>
+          <button type="button" data-lang="en" class="lang-btn" aria-label="English">EN</button>
+        </div>
+        <button class="menu-toggle" id="menuToggle" aria-label="Toggle menu" aria-expanded="false">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
     </div>
   </header>
 
@@ -90,10 +96,6 @@
       <li><a href="#faq" class="mobile-menu-link" data-i18n="nav.faq">Въпроси</a></li>
       <li><a href="#donate" class="btn btn-primary" data-i18n="nav.donate">Дари сега</a></li>
     </ul>
-    <div class="lang-switcher mobile-lang-switcher">
-      <button type="button" data-lang="bg" class="lang-btn active" aria-label="Bulgarian">BG</button>
-      <button type="button" data-lang="en" class="lang-btn" aria-label="English">EN</button>
-    </div>
   </nav>
 
   <main>
@@ -507,16 +509,10 @@
       <div class="container">
         <div class="section-header">
           <h2 class="section-title" data-i18n="donate.title">Подари Топлина</h2>
-          <p class="donation-subtitle" data-i18n="donate.subtitle">Избери как искаш да помогнеш:</p>
+          <p class="donation-subtitle" data-i18n="donate.subtitle">Направи дарение чрез банков превод:</p>
         </div>
 
-        <div class="donation-single">
-          <a href="https://donate.stripe.com/5kQfZg6me2w4dlx7zEgw000" class="btn btn-white btn-lg donation-btn" target="_blank" rel="noopener" data-i18n="donate.btn.simple">Дари Сега</a>
-          <p class="donation-note" data-i18n="donate.custom.impact">По ваша преценка</p>
-        </div>
-
-        <div class="bank-transfer">
-          <h3 data-i18n="donate.bank.title">Предпочиташ банков превод?</h3>
+        <div class="bank-transfer bank-transfer-main">
           <div class="bank-details">
             <div class="bank-row">
               <span class="bank-label" data-i18n="donate.bank.iban">IBAN:</span>
@@ -535,11 +531,14 @@
             </div>
             <div class="bank-row">
               <span class="bank-label" data-i18n="donate.bank.recipient">Получател:</span>
-              <span class="bank-value">ФОНДАЦИЯ ПОДАРИ ТОПЛИНА</span>
-            </div>
-            <div class="bank-row">
-              <span class="bank-label" data-i18n="donate.bank.eik">ЕИК:</span>
-              <span class="bank-value">208608024</span>
+              <span class="bank-value" id="recipient-value">ФОНДАЦИЯ ПОДАРИ ТОПЛИНА</span>
+              <button class="copy-btn" id="copy-recipient-btn" type="button" aria-label="Копирай получател">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <rect x="9" y="9" width="13" height="13" rx="2" ry="2"/>
+                  <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/>
+                </svg>
+                <span class="copy-text" data-i18n="donate.copy">Копирай</span>
+              </button>
             </div>
             <div class="bank-row">
               <span class="bank-label" data-i18n="donate.bank.reason">Основание:</span>
@@ -554,13 +553,13 @@
               <rect x="3" y="11" width="18" height="11" rx="2" ry="2"/>
               <path d="M7 11V7a5 5 0 0 1 10 0v4"/>
             </svg>
-            <span data-i18n="donate.security.secure">Сигурно плащане</span>
+            <span data-i18n="donate.security.secure">Сигурен банков превод</span>
           </span>
           <span>
             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
               <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
             </svg>
-            <span data-i18n="donate.security.nodata">Не съхраняваме данни от карти</span>
+            <span data-i18n="donate.security.nodata">Регистрирана фондация</span>
           </span>
         </div>
       </div>

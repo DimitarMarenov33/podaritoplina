@@ -266,20 +266,14 @@
     supportedLangs: ['bg', 'en'],
 
     init() {
-      // Check for stored preference
+      // Check for stored preference (only use if user explicitly chose a language)
       const storedLang = localStorage.getItem('preferred-language');
 
       if (storedLang && this.supportedLangs.includes(storedLang)) {
         this.currentLang = storedLang;
       } else {
-        // Auto-detect from browser
-        const browserLang = navigator.language.split('-')[0];
-        if (this.supportedLangs.includes(browserLang)) {
-          this.currentLang = browserLang;
-        } else {
-          // Default to Bulgarian for non-supported languages
-          this.currentLang = this.defaultLang;
-        }
+        // Default to Bulgarian (primary language of the site)
+        this.currentLang = 'bg';
       }
 
       this.applyTranslations();

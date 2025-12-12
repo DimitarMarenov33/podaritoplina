@@ -290,7 +290,15 @@
     },
 
     t(key) {
-      return translations[this.currentLang][key] || translations[this.defaultLang][key] || key;
+      // Check if key exists in current language (allows empty strings)
+      if (key in translations[this.currentLang]) {
+        return translations[this.currentLang][key];
+      }
+      // Fallback to default language
+      if (key in translations[this.defaultLang]) {
+        return translations[this.defaultLang][key];
+      }
+      return key;
     },
 
     applyTranslations() {

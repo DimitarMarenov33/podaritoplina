@@ -40,8 +40,11 @@
 
       // About
       'about.title': 'Кои сме ние',
+      'about.dimitar.name': 'Димитър',
       'about.dimitar.role': 'Софтуерен разработчик и инженер с мисия да създава технологии, които наистина помагат.',
+      'about.alex.name': 'Алекс',
       'about.alex.role': 'Фитнес треньор с мисия да помага на хората да станат по-силни - физически и духовно.',
+      'about.mihail.name': 'Михаил',
       'about.mihail.role': 'Студент с желание да допринесе за по-добро бъдеще на децата в нужда.',
       'about.quote': '"Тази Коледа решихме да направим нещо различно. Не просто да дарим пари някъде, а да се включим лично. Да видим очите на децата. Да усетим какво означава да помогнеш."',
 
@@ -63,6 +66,9 @@
       // Map
       'map.title': 'Къде ще бъдем',
       'map.note': 'Кликнете върху маркерите за повече информация',
+      'map.city.vidrare': 'Видраре',
+      'map.city.roman': 'Роман',
+      'map.city.lovech': 'Ловеч',
       'map.partner.badge': 'Партньор на място',
       'map.partner.name': 'Фондация "Добро за всеки"',
       'map.partner.desc': 'Нашият доверен партньор, който работи директно с общностите в Северозападна България от години.',
@@ -134,8 +140,8 @@
 
       // Hero
       'hero.countdown': '',
-      'hero.countdown.days': 'days until Christmas',
-      'hero.title': 'Give Warmth',
+      'hero.countdown.days': 'days remaining until Christmas',
+      'hero.title': 'Gift Warmth',
       'hero.subtitle': '200 children are waiting for their first warm clothes this winter',
       'hero.quote': '"If you have two shirts, give one to someone who has none."',
       'hero.quote.source': '— Luke 3:11',
@@ -157,8 +163,11 @@
 
       // About
       'about.title': 'Who We Are',
+      'about.dimitar.name': 'Dimitar',
       'about.dimitar.role': 'Software developer and engineer with a mission to create technologies that truly help.',
+      'about.alex.name': 'Alexander',
       'about.alex.role': 'Fitness trainer with a mission to help people become stronger - physically and spiritually.',
+      'about.mihail.name': 'Michael',
       'about.mihail.role': 'Student with a desire to contribute to a better future for children in need.',
       'about.quote': '"This Christmas we decided to do something different. Not just donate money somewhere, but get personally involved. To see the children\'s eyes. To feel what it means to help."',
 
@@ -180,6 +189,9 @@
       // Map
       'map.title': 'Where We Will Be',
       'map.note': 'Click on markers for more information',
+      'map.city.vidrare': 'Vidrare',
+      'map.city.roman': 'Roman',
+      'map.city.lovech': 'Lovech',
       'map.partner.badge': 'Local Partner',
       'map.partner.name': '"Good for Everyone" Foundation',
       'map.partner.desc': 'Our trusted partner who has been working directly with communities in Northwestern Bulgaria for years.',
@@ -188,20 +200,20 @@
       // Transparency
       'transparency.title': 'Full Transparency',
       'transparency.intro': 'Every penny is traceable. Here\'s what we buy:',
-      'transparency.sizes': 'Sizes: Ages 1-9',
+      'transparency.sizes': 'Sizes: 1-9 years old',
       'transparency.carousel.hint': 'Swipe left/right for more photos',
       'transparency.total.label': 'Total per set:',
       'transparency.total.includes': 'Includes: 1 long-sleeve top + 1 pants',
       'transparency.btn': 'Donate 1 set',
 
       // Donation
-      'donate.title': 'Give Warmth',
+      'donate.title': 'Gift Warmth',
       'donate.subtitle': 'Make a donation via bank transfer:',
       'donate.bank.iban': 'IBAN:',
       'donate.bank.bank': 'Bank:',
       'donate.bank.recipient': 'Recipient:',
       'donate.bank.reason': 'Reference:',
-      'donate.bank.reason.value': 'Donation Give Warmth',
+      'donate.bank.reason.value': 'Donation Gift Warmth',
       'donate.copy': 'Copy',
       'donate.copied': 'Copied!',
       'donate.security.secure': 'Secure bank transfer',
@@ -212,7 +224,7 @@
       'faq.q1': 'How do I know the money goes to children?',
       'faq.a1': 'We will document the entire process - from fundraising, through buying clothes, to distribution. Everything will be published with videos and photos.',
       'faq.q2': 'Can I donate clothes instead of money?',
-      'faq.a2': 'Yes, you can! Contact Alex on Instagram to coordinate clothing donations.',
+      'faq.a2': 'Yes, you can! Contact Alexander on Instagram to coordinate clothing donations.',
       'faq.q3': 'Do you issue donation receipts?',
       'faq.a3': 'Yes, we issue official donation documents. We are a legitimate registered foundation and can provide the necessary documents for tax purposes.',
       'faq.q4': 'What happens if you don\'t raise the full amount?',
@@ -236,9 +248,9 @@
       'footer.social': 'Social Media',
       'footer.support': 'Supported by',
       'footer.quote': '"If you have two shirts, give one to someone who has none."',
-      'footer.copyright': '© 2025 Give Warmth | Personal Charity Initiative',
+      'footer.copyright': '© 2025 Gift Warmth | Personal Charity Initiative',
       'footer.privacy': 'Privacy Policy',
-      'footer.made': 'Made with love by Dimitar, Alex, and Mihail'
+      'footer.made': 'Made with love by Dimitar, Alexander, and Michael'
     }
   };
 
@@ -298,7 +310,7 @@
 
       // Update page title
       document.title = this.currentLang === 'en'
-        ? 'Give Warmth | Christmas Initiative for Children in Need'
+        ? 'Gift Warmth | Christmas Initiative for Children in Need'
         : 'Подари Топлина | Коледна инициатива за деца в нужда';
 
       // Update logo text
@@ -307,7 +319,7 @@
         const svg = logoText.querySelector('svg');
         logoText.innerHTML = '';
         if (svg) logoText.appendChild(svg);
-        logoText.appendChild(document.createTextNode(this.currentLang === 'en' ? ' Give Warmth' : ' Подари Топлина'));
+        logoText.appendChild(document.createTextNode(this.currentLang === 'en' ? ' Gift Warmth' : ' Подари Топлина'));
       }
     },
 

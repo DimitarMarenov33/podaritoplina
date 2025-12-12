@@ -614,7 +614,9 @@
 
     showSuccess(button, copyText) {
       const originalText = copyText.textContent;
-      copyText.textContent = 'Копирано!';
+      // Use i18n translation if available
+      const copiedText = window.I18n ? window.I18n.t('donate.copied') : 'Copied!';
+      copyText.textContent = copiedText;
       button.classList.add('copied');
 
       setTimeout(() => {

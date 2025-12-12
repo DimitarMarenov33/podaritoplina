@@ -567,6 +567,7 @@
   const CopyButtons = {
     init() {
       this.setupCopyButton('copy-iban-btn', 'iban-value');
+      this.setupCopyButton('copy-address-btn', 'address-value');
       this.setupCopyButton('copy-recipient-btn', 'recipient-value');
     },
 

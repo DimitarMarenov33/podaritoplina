@@ -1,6 +1,20 @@
 {
-  "current": 0,
-  "goal": 10000,
-  "lastUpdated": "2025-11-26T10:00:00Z",
-  "currency": "BGN"
+  "current": 1000,
+  "goal": 5000,
+  "lastUpdated": "2025-12-12T17:30:00Z",
+  "currency": "EUR",
+  "donors": [
+    {
+      "name": "Александър Дончев",
+      "amount": 500
+    },
+    {
+      "name": "Димитър Маренов",
+      "amount": 250
+    },
+    {
+      "name": "Михаил Михайлов",
+      "amount": 250
+    }
+  ]
 }

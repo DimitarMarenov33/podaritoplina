@@ -302,6 +302,44 @@ section {
   margin-left: var(--space-4);
 }
 
+/* Language Switcher */
+.lang-switcher {
+  display: flex;
+  align-items: center;
+  gap: var(--space-1);
+  margin-left: var(--space-4);
+  padding: var(--space-1);
+  background: var(--warm-gray);
+  border-radius: var(--radius-full);
+}
+
+.lang-btn {
+  padding: var(--space-1) var(--space-3);
+  font-size: var(--text-sm);
+  font-weight: 500;
+  color: var(--text-medium);
+  background: transparent;
+  border: none;
+  border-radius: var(--radius-full);
+  cursor: pointer;
+  transition: all var(--transition-fast);
+}
+
+.lang-btn:hover {
+  color: var(--text-dark);
+}
+
+.lang-btn.active {
+  background: var(--white);
+  color: var(--primary);
+  box-shadow: var(--shadow-sm);
+}
+
+.mobile-lang-switcher {
+  margin-top: var(--space-6);
+  justify-content: center;
+}
+
 /* Mobile Menu Toggle */
 .menu-toggle {
   display: flex;
@@ -1219,48 +1257,20 @@ section {
   margin-bottom: var(--space-10);
 }
 
-.donation-cards {
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: var(--space-4);
+.donation-single {
+  text-align: center;
   margin-bottom: var(--space-10);
 }
 
-.donation-card {
-  background: var(--white);
-  border-radius: var(--radius-xl);
-  padding: var(--space-6);
-  text-align: center;
-  transition: transform var(--transition-base);
+.donation-single .btn {
+  padding: var(--space-5) var(--space-12);
+  font-size: var(--text-lg);
 }
 
-.donation-card:hover {
-  transform: translateY(-4px);
-}
-
-.donation-amount {
-  font-family: var(--font-heading);
-  font-size: var(--text-3xl);
-  color: var(--primary);
-  margin-bottom: var(--space-2);
-}
-
-.donation-impact {
-  color: var(--text-medium);
-  margin-bottom: var(--space-4);
-}
-
-.donation-custom {
-  background: rgba(255, 255, 255, 0.1);
-  border: 2px dashed rgba(255, 255, 255, 0.3);
-}
-
-.donation-custom .donation-amount {
-  color: var(--white);
-}
-
-.donation-custom .donation-impact {
+.donation-note {
   color: rgba(255, 255, 255, 0.8);
+  margin-top: var(--space-4);
+  font-size: var(--text-sm);
 }
 
 .bank-transfer {
@@ -1288,8 +1298,11 @@ section {
 .bank-row {
   display: flex;
   justify-content: space-between;
+  align-items: center;
   padding: var(--space-3) 0;
   border-bottom: 1px solid var(--warm-gray);
+  flex-wrap: wrap;
+  gap: var(--space-2);
 }
 
 .bank-row:last-child {
@@ -1305,6 +1318,42 @@ section {
   color: var(--text-dark);
   font-weight: 600;
   font-family: monospace;
+}
+
+.copy-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  padding: var(--space-2) var(--space-3);
+  background: var(--primary);
+  color: var(--white);
+  border-radius: var(--radius-md);
+  font-size: var(--text-xs);
+  font-weight: 500;
+  transition: all var(--transition-fast);
+  cursor: pointer;
+  border: none;
+}
+
+.copy-btn:hover {
+  background: var(--primary-dark);
+  transform: translateY(-1px);
+}
+
+.copy-btn:active {
+  transform: translateY(0);
+}
+
+.copy-btn.copied {
+  background: var(--success);
+}
+
+.copy-btn svg {
+  flex-shrink: 0;
+}
+
+.copy-text {
+  white-space: nowrap;
 }
 
 .payment-security {
@@ -1490,90 +1539,99 @@ section {
 }
 
 /* ==========================================================================
-   Partners Section
+   Donors Section
    ========================================================================== */
 
-.partners-section {
-  background: var(--cream);
+/* Donors Inline (in progress section) */
+.donors-inline {
+  margin-top: var(--space-10);
+  padding-top: var(--space-8);
+  border-top: 1px solid var(--warm-gray);
 }
 
-.partners-grid {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: var(--space-6);
-  margin-bottom: var(--space-10);
-}
-
-.partner-card {
-  background: var(--white);
-  padding: var(--space-8);
-  border-radius: var(--radius-xl);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  box-shadow: var(--shadow-sm);
-  min-height: 120px;
-}
-
-.partner-placeholder {
-  color: var(--text-light);
-  font-size: var(--text-sm);
-  text-align: center;
-}
-
-.become-partner {
-  text-align: center;
-  padding: var(--space-10);
-  background: var(--white);
-  border-radius: var(--radius-xl);
-  box-shadow: var(--shadow-lg);
-}
-
-.become-partner h3 {
+.donors-inline-title {
   font-family: var(--font-heading);
-  font-size: var(--text-2xl);
-  margin-bottom: var(--space-4);
+  font-size: var(--text-xl);
+  color: var(--text-dark);
+  margin-bottom: var(--space-2);
 }
 
-.become-partner p {
+.donors-inline-subtitle {
   color: var(--text-medium);
+  font-size: var(--text-sm);
   margin-bottom: var(--space-6);
 }
 
-.partner-tiers {
+.donors-list {
   display: grid;
-  grid-template-columns: 1fr;
-  gap: var(--space-4);
-  margin-bottom: var(--space-8);
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: var(--space-3);
 }
 
-.tier {
+.donor-card {
+  background: var(--white);
+  padding: var(--space-3) var(--space-4);
+  border-radius: var(--radius-lg);
   display: flex;
   align-items: center;
-  justify-content: space-between;
-  padding: var(--space-4);
-  background: var(--cream);
-  border-radius: var(--radius-lg);
+  gap: var(--space-3);
+  box-shadow: var(--shadow-sm);
+  transition: transform var(--transition-fast), box-shadow var(--transition-fast);
 }
 
-.tier-name {
+.donor-card:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-md);
+}
+
+.donor-icon {
+  width: 36px;
+  height: 36px;
+  background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+  border-radius: var(--radius-full);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.donor-icon svg {
+  width: 18px;
+  height: 18px;
+  color: var(--white);
+}
+
+.donor-info {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  min-width: 0;
+}
+
+.donor-name {
   font-weight: 600;
+  color: var(--text-dark);
+  font-size: var(--text-sm);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
-.tier-name.bronze {
-  color: #CD7F32;
+.donor-amount {
+  color: var(--primary);
+  font-weight: 500;
+  font-size: var(--text-xs);
 }
 
-.tier-name.silver {
-  color: #A0A0A0;
+.donor-currency {
+  margin-left: 2px;
 }
 
-.tier-name.gold {
-  color: var(--accent-dark);
-}
-
-.tier-amount {
+.no-donors {
+  text-align: center;
   color: var(--text-medium);
+  padding: var(--space-4);
+  grid-column: 1 / -1;
 }
 
 /* ==========================================================================

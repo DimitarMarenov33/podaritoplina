@@ -14,7 +14,7 @@
     targetDate: new Date('2025-12-20T00:00:00'),
     christmasDate: new Date('2025-12-25T00:00:00'),
     donationsDataPath: 'data/donations.json',
-    pricePerChild: 40,
+    pricePerChild: 25, // 25 EUR per child (was 50 BGN)
     animationDuration: 2000,
     snowflakeCount: 50
   };
@@ -111,7 +111,7 @@
     currentAmountEl: null,
     childrenCountEl: null,
     hasAnimated: false,
-    data: { current: 0, goal: 10000 },
+    data: { current: 0, goal: 10000, donors: [] },
 
     init() {
       this.progressBar = document.getElementById('progressBar');
@@ -131,9 +131,40 @@
           this.data = await response.json();
         }
       } catch (error) {
-        // Use default values if fetch fails
-        console.log('Using default donation data');
-        this.data = { current: 0, goal: 10000 };
+        // Fallback: use embedded data for local file access
+        console.log('Using embedded donation data (fetch failed - likely local file access)');
+        this.data = {
+          current: 1000,
+          goal: 5000,
+          donors: [
+            { name: "Александър Дончев", amount: 500 },
+            { name: "Димитър Маренов", amount: 250 },
+            { name: "Михаил Михайлов", amount: 250 }
+          ]
+        };
+      }
+
+      // Render donors immediately
+      DonorsList.render(this.data.donors || []);
+
+      // Show initial values immediately (without animation)
+      this.showInitialValues();
+    },
+
+    showInitialValues() {
+      const percentage = (this.data.current / this.data.goal) * 100;
+      const childrenCount = Math.floor(this.data.current / CONFIG.pricePerChild);
+
+      // Set initial values
+      if (this.currentAmountEl) {
+        this.currentAmountEl.textContent = this.data.current.toLocaleString('bg-BG');
+      }
+      if (this.childrenCountEl) {
+        this.childrenCountEl.textContent = childrenCount;
+      }
+      if (this.progressBar) {
+        this.progressBar.style.width = `${percentage}%`;
+        this.progressBar.setAttribute('aria-valuenow', this.data.current);
       }
     },
 
@@ -163,14 +194,59 @@
         this.progressBar.setAttribute('aria-valuenow', this.data.current);
       }, 100);
 
-      // Animate numbers
-      if (this.currentAmountEl) {
-        animateNumber(this.currentAmountEl, 0, this.data.current, CONFIG.animationDuration);
+      // Animate numbers from current display value
+      const currentDisplayed = parseInt(this.currentAmountEl?.textContent?.replace(/\s/g, '') || '0');
+
+      if (this.currentAmountEl && currentDisplayed !== this.data.current) {
+        animateNumber(this.currentAmountEl, currentDisplayed, this.data.current, CONFIG.animationDuration);
       }
 
       if (this.childrenCountEl) {
-        animateNumber(this.childrenCountEl, 0, childrenCount, CONFIG.animationDuration);
+        const currentChildren = parseInt(this.childrenCountEl.textContent || '0');
+        if (currentChildren !== childrenCount) {
+          animateNumber(this.childrenCountEl, currentChildren, childrenCount, CONFIG.animationDuration);
+        }
       }
+    }
+  };
+
+  // ==========================================================================
+  // Donors List
+  // ==========================================================================
+
+  const DonorsList = {
+    container: null,
+
+    render(donors) {
+      this.container = document.getElementById('donors-list');
+      if (!this.container) return;
+
+      if (!donors || donors.length === 0) {
+        this.container.innerHTML = '<p class="no-donors" data-i18n="donors.empty">Бъди първият дарител!</p>';
+        return;
+      }
+
+      const html = donors.map(donor => `
+        <div class="donor-card">
+          <div class="donor-icon">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/>
+            </svg>
+          </div>
+          <div class="donor-info">
+            <span class="donor-name">${this.escapeHtml(donor.name)}</span>
+            <span class="donor-amount">${donor.amount}<span class="donor-currency">${window.I18n ? window.I18n.t('progress.currency') : '€'}</span></span>
+          </div>
+        </div>
+      `).join('');
+
+      this.container.innerHTML = html;
+    },
+
+    escapeHtml(text) {
+      const div = document.createElement('div');
+      div.textContent = text;
+      return div.innerHTML;
     }
   };
 
@@ -372,7 +448,7 @@
   const Share = {
     data: {
       title: 'Подари Топлина',
-      text: '250 деца от Северозападна България очакват топли дрехи за Коледа. Можеш ли да помогнеш?',
+      text: '200 деца от Северозападна България очакват топли дрехи за Коледа. Можеш ли да помогнеш?',
       url: window.location.href
     },
 
@@ -485,6 +561,69 @@
   };
 
   // ==========================================================================
+  // Copy IBAN Button
+  // ==========================================================================
+
+  const CopyIBAN = {
+    button: null,
+    ibanValue: null,
+
+    init() {
+      this.button = document.getElementById('copy-iban-btn');
+      this.ibanValue = document.getElementById('iban-value');
+
+      if (!this.button || !this.ibanValue) return;
+
+      this.button.addEventListener('click', () => this.copyToClipboard());
+    },
+
+    async copyToClipboard() {
+      const iban = this.ibanValue.textContent;
+      const copyText = this.button.querySelector('.copy-text');
+
+      try {
+        await navigator.clipboard.writeText(iban);
+        this.showSuccess(copyText);
+      } catch (err) {
+        // Fallback for older browsers
+        this.fallbackCopy(iban, copyText);
+      }
+    },
+
+    fallbackCopy(text, copyText) {
+      const textArea = document.createElement('textarea');
+      textArea.value = text;
+      textArea.style.position = 'fixed';
+      textArea.style.left = '-999999px';
+      document.body.appendChild(textArea);
+      textArea.select();
+
+      try {
+        document.execCommand('copy');
+        this.showSuccess(copyText);
+      } catch (err) {
+        copyText.textContent = 'Грешка';
+        setTimeout(() => {
+          copyText.textContent = 'Копирай';
+        }, 2000);
+      }
+
+      document.body.removeChild(textArea);
+    },
+
+    showSuccess(copyText) {
+      const originalText = copyText.textContent;
+      copyText.textContent = 'Копирано!';
+      this.button.classList.add('copied');
+
+      setTimeout(() => {
+        copyText.textContent = originalText;
+        this.button.classList.remove('copied');
+      }, 2000);
+    }
+  };
+
+  // ==========================================================================
   // Initialize All Modules
   // ==========================================================================
 
@@ -498,6 +637,7 @@
     SnowAnimation.init();
     HeroCarousel.init();
     LazyLoad.init();
+    CopyIBAN.init();
 
     // Expose share function globally for potential button use
     window.shareWebsite = () => Share.share();

@@ -7,8 +7,8 @@
 
   <!-- SEO Meta Tags -->
   <title>Подари Топлина | Коледна инициатива за деца в нужда</title>
-  <meta name="description" content="Помогни на деца от Северозападна България да получат топли дрехи за Коледа. 50лв = 1 дете с топла горница и долница.">
-  <meta name="keywords" content="благотворителност, коледа, деца, дарение, България, Монтана, Берковица, Мездра, Правец">
+  <meta name="description" content="Помогни на деца от Северозападна България да получат топли дрехи за Коледа. 25€ = 1 дете с топла горница и долница.">
+  <meta name="keywords" content="благотворителност, коледа, деца, дарение, България, Видраре, Роман, Ловеч">
   <meta name="author" content="Димитър и Алекс">
   <meta name="robots" content="index, follow">
 
@@ -16,7 +16,7 @@
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://podari-toplina.bg">
   <meta property="og:title" content="Подари Топлина | Коледна благотворителност">
-  <meta property="og:description" content="250 деца очакват топли дрехи тази Коледа. Можеш ли да помогнеш?">
+  <meta property="og:description" content="200 деца очакват топли дрехи тази Коледа. Можеш ли да помогнеш?">
   <meta property="og:image" content="assets/images/og-image.jpg">
   <meta property="og:locale" content="bg_BG">
 
@@ -24,7 +24,7 @@
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:url" content="https://podari-toplina.bg">
   <meta name="twitter:title" content="Подари Топлина">
-  <meta name="twitter:description" content="250 деца очакват топли дрехи тази Коледа">
+  <meta name="twitter:description" content="200 деца очакват топли дрехи тази Коледа">
   <meta name="twitter:image" content="assets/images/og-image.jpg">
 
   <!-- Favicon -->
@@ -60,12 +60,16 @@
 
       <nav class="nav" aria-label="Main navigation">
         <ul class="nav-list">
-          <li><a href="#about" class="nav-link">За нас</a></li>
-          <li><a href="#transparency" class="nav-link">Прозрачност</a></li>
-          <li><a href="#timeline" class="nav-link">Как работи</a></li>
-          <li><a href="#faq" class="nav-link">Въпроси</a></li>
-          <li><a href="#donate" class="btn btn-primary btn-sm nav-cta">Дари сега</a></li>
+          <li><a href="#about" class="nav-link" data-i18n="nav.about">За нас</a></li>
+          <li><a href="#transparency" class="nav-link" data-i18n="nav.transparency">Прозрачност</a></li>
+          <li><a href="#timeline" class="nav-link" data-i18n="nav.how">Как работи</a></li>
+          <li><a href="#faq" class="nav-link" data-i18n="nav.faq">Въпроси</a></li>
+          <li><a href="#donate" class="btn btn-primary btn-sm nav-cta" data-i18n="nav.donate">Дари сега</a></li>
         </ul>
+        <div class="lang-switcher" id="lang-switcher">
+          <button type="button" data-lang="bg" class="lang-btn active" aria-label="Bulgarian">BG</button>
+          <button type="button" data-lang="en" class="lang-btn" aria-label="English">EN</button>
+        </div>
       </nav>
 
       <button class="menu-toggle" id="menuToggle" aria-label="Toggle menu" aria-expanded="false">
@@ -80,12 +84,16 @@
   <div class="mobile-overlay" id="mobileOverlay"></div>
   <nav class="mobile-menu" id="mobileMenu" aria-label="Mobile navigation">
     <ul class="mobile-menu-list">
-      <li><a href="#about" class="mobile-menu-link">За нас</a></li>
-      <li><a href="#transparency" class="mobile-menu-link">Прозрачност</a></li>
-      <li><a href="#timeline" class="mobile-menu-link">Как работи</a></li>
-      <li><a href="#faq" class="mobile-menu-link">Въпроси</a></li>
-      <li><a href="#donate" class="btn btn-primary">Дари сега</a></li>
+      <li><a href="#about" class="mobile-menu-link" data-i18n="nav.about">За нас</a></li>
+      <li><a href="#transparency" class="mobile-menu-link" data-i18n="nav.transparency">Прозрачност</a></li>
+      <li><a href="#timeline" class="mobile-menu-link" data-i18n="nav.how">Как работи</a></li>
+      <li><a href="#faq" class="mobile-menu-link" data-i18n="nav.faq">Въпроси</a></li>
+      <li><a href="#donate" class="btn btn-primary" data-i18n="nav.donate">Дари сега</a></li>
     </ul>
+    <div class="lang-switcher mobile-lang-switcher">
+      <button type="button" data-lang="bg" class="lang-btn active" aria-label="Bulgarian">BG</button>
+      <button type="button" data-lang="en" class="lang-btn" aria-label="English">EN</button>
+    </div>
   </nav>
 
   <main>
@@ -104,27 +112,27 @@
 
       <div class="hero-content">
         <div class="hero-countdown" id="countdown">
-          Остават <span id="daysLeft">--</span> дни до Коледа
+          <span data-i18n="hero.countdown">Остават</span> <span id="daysLeft">--</span> <span data-i18n="hero.countdown.days">дни до Коледа</span>
         </div>
 
-        <h1 class="hero-title">Подари Топлина</h1>
+        <h1 class="hero-title" data-i18n="hero.title">Подари Топлина</h1>
 
-        <p class="hero-subtitle">
-          250 деца очакват своята първа топла дреха тази зима
+        <p class="hero-subtitle" data-i18n="hero.subtitle">
+          200 деца очакват своята първа топла дреха тази зима
         </p>
 
         <p class="hero-quote">
-          "Който има две ризи, нека даде на оногова, който няма." <span>— Лука 3:11</span>
+          <span data-i18n="hero.quote">"Който има две ризи, нека даде на оногова, който няма."</span> <span data-i18n="hero.quote.source">— Лука 3:11</span>
         </p>
 
         <div class="hero-buttons">
-          <a href="#donate" class="btn btn-white btn-lg">Дари сега</a>
-          <a href="#mission" class="btn btn-secondary btn-lg" style="border-color: white; color: white;">Научи повече</a>
+          <a href="#donate" class="btn btn-white btn-lg" data-i18n="hero.btn.donate">Дари сега</a>
+          <a href="#mission" class="btn btn-secondary btn-lg" style="border-color: white; color: white;" data-i18n="hero.btn.learn">Научи повече</a>
         </div>
       </div>
 
       <a href="#progress" class="hero-scroll" aria-label="Scroll down">
-        <span>Научи повече</span>
+        <span data-i18n="hero.btn.learn">Научи повече</span>
         <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
           <path d="M12 5v14M5 12l7 7 7-7"/>
         </svg>
@@ -140,8 +148,8 @@
           </div>
 
           <div class="progress-stats">
-            <span class="progress-current"><span id="currentAmount">0</span>лв</span>
-            <span class="progress-goal">събрани от 10,000лв</span>
+            <span class="progress-current"><span id="currentAmount">0</span><span data-i18n="progress.currency">€</span></span>
+            <span class="progress-goal" data-i18n="progress.goal">събрани от 5,000€</span>
           </div>
 
           <p class="progress-children">
@@ -151,10 +159,19 @@
               <path d="M23 21v-2a4 4 0 0 0-3-3.87"/>
               <path d="M16 3.13a4 4 0 0 1 0 7.75"/>
             </svg>
-            = <span id="childrenCount">0</span> деца вече имат топли дрехи
+            = <span id="childrenCount">0</span> <span data-i18n="progress.children">деца вече имат топли дрехи</span>
           </p>
 
-          <a href="#donate" class="btn btn-primary">Помогни да стигнем целта</a>
+          <a href="#donate" class="btn btn-primary" data-i18n="progress.btn">Помогни да стигнем целта</a>
+
+          <!-- Donors List -->
+          <div class="donors-inline">
+            <h3 class="donors-inline-title" data-i18n="donors.title">Нашите дарители</h3>
+            <p class="donors-inline-subtitle" data-i18n="donors.subtitle">Благодарим на всички, които подкрепиха каузата</p>
+            <div class="donors-list" id="donors-list">
+              <!-- Donors will be loaded from JSON -->
+            </div>
+          </div>
         </div>
       </div>
     </section>
@@ -163,11 +180,11 @@
     <section class="mission-section" id="mission">
       <div class="container">
         <div class="section-header">
-          <h2 class="section-title">Защо го правим?</h2>
+          <h2 class="section-title" data-i18n="mission.title">Защо го правим?</h2>
         </div>
 
-        <p class="mission-text">
-          В цяла България има деца от финансово и социално уязвими семейства, които нямат топли дрехи за зимата. Тази година ще посетим село Видраре и други села от Северозападна България - един от най-бедните региони в страната според официалната статистика на НСИ. Искаме да донесем топлина там, където е най-нужна.
+        <p class="mission-text" data-i18n="mission.text">
+          В цяла България има деца от финансово и социално уязвими семейства, които нямат топли дрехи за зимата. Тази година ще посетим село Видраре, град Роман и град Ловеч - един от най-бедните региони в страната според официалната статистика на НСИ. Искаме да донесем топлина там, където е най-нужна.
         </p>
 
         <div class="mission-stats">
@@ -178,8 +195,8 @@
               <path d="M23 21v-2a4 4 0 0 0-3-3.87"/>
               <path d="M16 3.13a4 4 0 0 1 0 7.75"/>
             </svg>
-            <div class="stat-number">250</div>
-            <div class="stat-label">деца чакат помощ</div>
+            <div class="stat-number">200</div>
+            <div class="stat-label" data-i18n="mission.stat.children">деца чакат помощ</div>
           </div>
 
           <div class="stat-card card">
@@ -191,9 +208,9 @@
               <path d="M12 8c-1.5-2-4-2.5-4-5a3 3 0 0 1 4 0"/>
               <path d="M12 8c1.5-2 4-2.5 4-5a3 3 0 0 0-4 0"/>
             </svg>
-            <div class="stat-number">50лв</div>
-            <div class="stat-label">= 1 комплект дрехи</div>
-            <p class="stat-note" style="font-size: 0.85rem; color: var(--text-muted); margin-top: 0.5rem;">1 топла горница с дълъг ръкав + 1 топла долница</p>
+            <div class="stat-number">25<span data-i18n="progress.currency">€</span></div>
+            <div class="stat-label" data-i18n="mission.stat.price">= 1 комплект дрехи</div>
+            <p class="stat-note" style="font-size: 0.85rem; color: var(--text-muted); margin-top: 0.5rem;" data-i18n="mission.stat.note">1 топла горница с дълъг ръкав + 1 топла долница</p>
           </div>
         </div>
       </div>
@@ -203,7 +220,7 @@
     <section class="about-section" id="about">
       <div class="container">
         <div class="section-header">
-          <h2 class="section-title">Кои сме ние</h2>
+          <h2 class="section-title" data-i18n="about.title">Кои сме ние</h2>
         </div>
 
         <div class="about-grid">
@@ -212,7 +229,7 @@
               <img src="assets/images/team/Dimitar Marenov Cutout Seeders.png" alt="Димитър">
             </div>
             <h3 class="about-name">Димитър</h3>
-            <p class="about-role">Софтуерен разработчик и инженер с мисия да създава технологии, които наистина помагат.</p>
+            <p class="about-role" data-i18n="about.dimitar.role">Софтуерен разработчик и инженер с мисия да създава технологии, които наистина помагат.</p>
             <div class="about-socials">
               <a href="https://www.instagram.com/dimitarmarenov/" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="Instagram">
                 <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
@@ -236,7 +253,7 @@
               <img src="assets/images/team/alex.jpg" alt="Алекс">
             </div>
             <h3 class="about-name">Алекс</h3>
-            <p class="about-role">Фитнес треньор с мисия да помага на хората да станат по-силни - физически и духовно.</p>
+            <p class="about-role" data-i18n="about.alex.role">Фитнес треньор с мисия да помага на хората да станат по-силни - физически и духовно.</p>
             <div class="about-socials">
               <a href="https://www.instagram.com/a.donchevv" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="Instagram">
                 <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
@@ -264,7 +281,7 @@
               <img src="assets/images/team/misho-removebg-preview.png" alt="Михаил">
             </div>
             <h3 class="about-name">Михаил</h3>
-            <p class="about-role">Студент с желание да допринесе за по-добро бъдеще на децата в нужда.</p>
+            <p class="about-role" data-i18n="about.mihail.role">Студент с желание да допринесе за по-добро бъдеще на децата в нужда.</p>
             <div class="about-socials">
               <a href="https://www.instagram.com/michael.mhlv/" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="Instagram">
                 <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
@@ -278,7 +295,7 @@
         </div>
 
         <div class="about-quote">
-          <p class="quote-text">
+          <p class="quote-text" data-i18n="about.quote">
             "Тази Коледа решихме да направим нещо различно. Не просто да дарим пари някъде, а да се включим лично. Да видим очите на децата. Да усетим какво означава да помогнеш."
           </p>
         </div>
@@ -289,43 +306,43 @@
     <section class="timeline-section" id="timeline">
       <div class="container">
         <div class="section-header">
-          <h2 class="section-title">Пътят на вашето дарение</h2>
+          <h2 class="section-title" data-i18n="timeline.title">Пътят на вашето дарение</h2>
         </div>
 
         <div class="timeline">
           <div class="timeline-item active">
             <div class="timeline-marker">1</div>
             <div class="timeline-content">
-              <div class="timeline-date">9-13 ДЕКЕМВРИ</div>
-              <h3 class="timeline-title">Събираме средства</h3>
-              <p class="timeline-description">Всяко дарение се отчита публично. Следете напредъка в реално време.</p>
+              <div class="timeline-date" data-i18n="timeline.date1">9-13 ДЕКЕМВРИ</div>
+              <h3 class="timeline-title" data-i18n="timeline.title1">Събираме средства</h3>
+              <p class="timeline-description" data-i18n="timeline.desc1">Всяко дарение се отчита публично. Следете напредъка в реално време.</p>
             </div>
           </div>
 
           <div class="timeline-item">
             <div class="timeline-marker">2</div>
             <div class="timeline-content">
-              <div class="timeline-date">13-16 ДЕКЕМВРИ</div>
-              <h3 class="timeline-title">Купуваме дрехите</h3>
-              <p class="timeline-description">Публикуваме какво сме купили с касови бележки и снимки.</p>
+              <div class="timeline-date" data-i18n="timeline.date2">13-16 ДЕКЕМВРИ</div>
+              <h3 class="timeline-title" data-i18n="timeline.title2">Купуваме дрехите</h3>
+              <p class="timeline-description" data-i18n="timeline.desc2">Публикуваме какво сме купили с касови бележки и снимки.</p>
             </div>
           </div>
 
           <div class="timeline-item">
             <div class="timeline-marker">3</div>
             <div class="timeline-content">
-              <div class="timeline-date">19 ДЕКЕМВРИ</div>
-              <h3 class="timeline-title">Раздаваме подаръците</h3>
-              <p class="timeline-description">Посещаваме селата лично и предаваме дрехите на децата.</p>
+              <div class="timeline-date" data-i18n="timeline.date3">19 ДЕКЕМВРИ</div>
+              <h3 class="timeline-title" data-i18n="timeline.title3">Раздаваме подаръците</h3>
+              <p class="timeline-description" data-i18n="timeline.desc3">Посещаваме селата лично и предаваме дрехите на децата.</p>
             </div>
           </div>
 
           <div class="timeline-item">
             <div class="timeline-marker">4</div>
             <div class="timeline-content">
-              <div class="timeline-date">ДО 25 ДЕКЕМВРИ</div>
-              <h3 class="timeline-title">Споделяме влога</h3>
-              <p class="timeline-description">Качваме пълен видео документ от цялото пътуване.</p>
+              <div class="timeline-date" data-i18n="timeline.date4">ДО 25 ДЕКЕМВРИ</div>
+              <h3 class="timeline-title" data-i18n="timeline.title4">Споделяме влога</h3>
+              <p class="timeline-description" data-i18n="timeline.desc4">Качваме пълен видео документ от цялото пътуване.</p>
             </div>
           </div>
         </div>
@@ -336,7 +353,7 @@
     <section class="map-section" id="map">
       <div class="container">
         <div class="section-header">
-          <h2 class="section-title">Къде ще бъдем</h2>
+          <h2 class="section-title" data-i18n="map.title">Къде ще бъдем</h2>
         </div>
 
         <div class="map-container">
@@ -350,7 +367,7 @@
               referrerpolicy="no-referrer-when-downgrade">
             </iframe>
           </div>
-          <p class="map-note">Кликнете върху маркерите за повече информация</p>
+          <p class="map-note" data-i18n="map.note">Кликнете върху маркерите за повече информация</p>
         </div>
 
         <div class="map-cities">
@@ -374,7 +391,7 @@
               </svg>
             </div>
             <div class="city-info">
-              <h4>Правец</h4>
+              <h4>Роман</h4>
             </div>
           </div>
 
@@ -386,44 +403,20 @@
               </svg>
             </div>
             <div class="city-info">
-              <h4>Мездра</h4>
-            </div>
-          </div>
-
-          <div class="city-card">
-            <div class="city-marker">
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/>
-                <circle cx="12" cy="10" r="3"/>
-              </svg>
-            </div>
-            <div class="city-info">
-              <h4>Монтана</h4>
-            </div>
-          </div>
-
-          <div class="city-card">
-            <div class="city-marker">
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/>
-                <circle cx="12" cy="10" r="3"/>
-              </svg>
-            </div>
-            <div class="city-info">
-              <h4>Берковица</h4>
+              <h4>Ловеч</h4>
             </div>
           </div>
         </div>
 
         <div class="map-partner-highlight">
-          <div class="partner-badge">Партньор на място</div>
+          <div class="partner-badge" data-i18n="map.partner.badge">Партньор на място</div>
           <div class="partner-logo-large">
             <img src="assets/images/icons/logo.png" alt="Лого на Фондация Добро за всеки">
           </div>
-          <h3 class="partner-name">Фондация "Добро за всеки"</h3>
-          <p class="partner-description">Нашият доверен партньор, който работи директно с общностите в Северозападна България от години.</p>
+          <h3 class="partner-name" data-i18n="map.partner.name">Фондация "Добро за всеки"</h3>
+          <p class="partner-description" data-i18n="map.partner.desc">Нашият доверен партньор, който работи директно с общностите в Северозападна България от години.</p>
           <a href="https://dobrozavseki.bg/" target="_blank" rel="noopener noreferrer" class="btn btn-primary">
-            Научи повече за фондацията
+            <span data-i18n="map.partner.btn">Научи повече за фондацията</span>
             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
               <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/>
               <polyline points="15 3 21 3 21 9"/>
@@ -438,10 +431,10 @@
     <section class="transparency-section" id="transparency">
       <div class="container">
         <div class="section-header">
-          <h2 class="section-title">Пълна прозрачност</h2>
+          <h2 class="section-title" data-i18n="transparency.title">Пълна прозрачност</h2>
         </div>
 
-        <p class="transparency-intro">
+        <p class="transparency-intro" data-i18n="transparency.intro">
           Всяка стотинка е проследима. Ето какво купуваме:
         </p>
 
@@ -449,77 +442,62 @@
           <div class="clothes-carousel">
             <div class="clothes-card">
               <div class="clothes-image">
-                <img src="assets/images/clothes/IMG_3361.JPG" alt="Топла блуза с дълъг ръкав" loading="lazy">
-                <div class="clothes-overlay">
-                  <h3 class="clothes-name">Топла блуза</h3>
-                </div>
+                <img src="assets/images/clothes/IMG_3361.JPG" alt="Топли дрехи" loading="lazy">
               </div>
               <div class="clothes-info">
                 <p class="clothes-details">Размери: 1-9 години</p>
-                <p class="clothes-price">~25лв</p>
+                <p class="clothes-price">~12€</p>
               </div>
             </div>
 
             <div class="clothes-card">
               <div class="clothes-image">
                 <img src="assets/images/clothes/IMG_3362.JPG" alt="Топли дрехи" loading="lazy">
-                <div class="clothes-overlay">
-                  <h3 class="clothes-name">Топла блуза</h3>
-                </div>
               </div>
               <div class="clothes-info">
                 <p class="clothes-details">Размери: 1-9 години</p>
-                <p class="clothes-price">~25лв</p>
+                <p class="clothes-price">~12€</p>
               </div>
             </div>
 
             <div class="clothes-card">
               <div class="clothes-image">
                 <img src="assets/images/clothes/IMG_3363.JPG" alt="Топли дрехи" loading="lazy">
-                <div class="clothes-overlay">
-                  <h3 class="clothes-name">Топъл панталон</h3>
-                </div>
               </div>
               <div class="clothes-info">
                 <p class="clothes-details">Размери: 1-9 години</p>
-                <p class="clothes-price">~25лв</p>
+                <p class="clothes-price">~12€</p>
               </div>
             </div>
 
             <div class="clothes-card">
               <div class="clothes-image">
                 <img src="assets/images/clothes/IMG_3364.JPG" alt="Топли дрехи" loading="lazy">
-                <div class="clothes-overlay">
-                  <h3 class="clothes-name">Топъл панталон</h3>
-                </div>
               </div>
               <div class="clothes-info">
                 <p class="clothes-details">Размери: 1-9 години</p>
-                <p class="clothes-price">~25лв</p>
+                <p class="clothes-price">~12€</p>
               </div>
             </div>
 
             <div class="clothes-card">
               <div class="clothes-image">
-                <img src="assets/images/clothes/IMG_3365.JPG" alt="Топъл панталон" loading="lazy">
-                <div class="clothes-overlay">
-                  <h3 class="clothes-name">Топъл панталон</h3>
-                </div>
+                <img src="assets/images/clothes/IMG_3365.JPG" alt="Топли дрехи" loading="lazy">
               </div>
               <div class="clothes-info">
                 <p class="clothes-details">Размери: 1-9 години</p>
-                <p class="clothes-price">~25лв</p>
+                <p class="clothes-price">~12€</p>
               </div>
             </div>
           </div>
-          <p class="carousel-hint">Плъзни наляво/надясно за повече снимки</p>
+          <p class="carousel-hint" data-i18n="transparency.carousel.hint">Плъзни наляво/надясно за повече снимки</p>
         </div>
 
         <div class="transparency-total">
-          <p class="total-label">Общо на комплект:</p>
-          <p class="total-price">~50лв</p>
-          <p class="total-includes">Включва: 1 горница с дълъг ръкав + 1 долница</p>
-          <a href="#donate" class="btn btn-primary" style="margin-top: var(--space-6);">Дари 1 комплект за 50лв</a>
+          <p class="total-label" data-i18n="transparency.total.label">Общо на комплект:</p>
+          <p class="total-price">~25<span data-i18n="progress.currency">€</span></p>
+          <p class="total-includes" data-i18n="transparency.total.includes">Включва: 1 горница с дълъг ръкав + 1 долница</p>
+          <a href="#donate" class="btn btn-primary" style="margin-top: var(--space-6);" data-i18n="transparency.btn">Дари 1 комплект</a>
         </div>
       </div>
     </section>
@@ -528,54 +506,44 @@
     <section class="donation-section" id="donate">
       <div class="container">
         <div class="section-header">
-          <h2 class="section-title">Подари Топлина</h2>
-          <p class="donation-subtitle">Избери как искаш да помогнеш:</p>
+          <h2 class="section-title" data-i18n="donate.title">Подари Топлина</h2>
+          <p class="donation-subtitle" data-i18n="donate.subtitle">Избери как искаш да помогнеш:</p>
         </div>
 
-        <div class="donation-cards">
-          <div class="donation-card">
-            <div class="donation-amount">50лв</div>
-            <p class="donation-impact">1 дете с топли дрехи</p>
-            <a href="#" class="btn btn-primary">Дари</a>
-          </div>
-
-          <div class="donation-card">
-            <div class="donation-amount">100лв</div>
-            <p class="donation-impact">2 деца с дрехи</p>
-            <a href="#" class="btn btn-primary">Дари</a>
-          </div>
-
-          <div class="donation-card">
-            <div class="donation-amount">200лв</div>
-            <p class="donation-impact">4 деца с дрехи</p>
-            <a href="#" class="btn btn-primary">Дари</a>
-          </div>
-
-          <div class="donation-card donation-custom">
-            <div class="donation-amount">Друга сума</div>
-            <p class="donation-impact">По ваша преценка</p>
-            <a href="#" class="btn btn-white">Дари</a>
-          </div>
+        <div class="donation-single">
+          <a href="https://donate.stripe.com/5kQfZg6me2w4dlx7zEgw000" class="btn btn-white btn-lg donation-btn" target="_blank" rel="noopener" data-i18n="donate.btn.simple">Дари Сега</a>
+          <p class="donation-note" data-i18n="donate.custom.impact">По ваша преценка</p>
         </div>
 
         <div class="bank-transfer">
-          <h3>Предпочиташ банков превод?</h3>
+          <h3 data-i18n="donate.bank.title">Предпочиташ банков превод?</h3>
           <div class="bank-details">
             <div class="bank-row">
-              <span class="bank-label">IBAN:</span>
-              <span class="bank-value">BG00 XXXX 0000 0000 0000 00</span>
+              <span class="bank-label" data-i18n="donate.bank.iban">IBAN:</span>
+              <span class="bank-value" id="iban-value">BG65UNCR70001526973191</span>
+              <button class="copy-btn" id="copy-iban-btn" type="button" aria-label="Копирай IBAN">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <rect x="9" y="9" width="13" height="13" rx="2" ry="2"/>
+                  <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/>
+                </svg>
+                <span class="copy-text" data-i18n="donate.copy">Копирай</span>
+              </button>
             </div>
             <div class="bank-row">
-              <span class="bank-label">Банка:</span>
-              <span class="bank-value">[Име на банката]</span>
+              <span class="bank-label" data-i18n="donate.bank.bank">Банка:</span>
+              <span class="bank-value">УниКредит Булбанк</span>
             </div>
             <div class="bank-row">
-              <span class="bank-label">Титуляр:</span>
-              <span class="bank-value">[Име]</span>
+              <span class="bank-label" data-i18n="donate.bank.recipient">Получател:</span>
+              <span class="bank-value">ФОНДАЦИЯ ПОДАРИ ТОПЛИНА</span>
             </div>
             <div class="bank-row">
-              <span class="bank-label">Основание:</span>
-              <span class="bank-value">Подари Топлина</span>
+              <span class="bank-label" data-i18n="donate.bank.eik">ЕИК:</span>
+              <span class="bank-value">208608024</span>
+            </div>
+            <div class="bank-row">
+              <span class="bank-label" data-i18n="donate.bank.reason">Основание:</span>
+              <span class="bank-value" data-i18n="donate.bank.reason.value">Дарение Подари Топлина</span>
             </div>
           </div>
         </div>
@@ -586,13 +554,13 @@
               <rect x="3" y="11" width="18" height="11" rx="2" ry="2"/>
               <path d="M7 11V7a5 5 0 0 1 10 0v4"/>
             </svg>
-            Сигурно плащане
+            <span data-i18n="donate.security.secure">Сигурно плащане</span>
           </span>
           <span>
             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
               <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
             </svg>
-            Не съхраняваме данни от карти
+            <span data-i18n="donate.security.nodata">Не съхраняваме данни от карти</span>
           </span>
         </div>
       </div>
@@ -602,19 +570,19 @@
     <section class="faq-section" id="faq">
       <div class="container">
         <div class="section-header">
-          <h2 class="section-title">Често задавани въпроси</h2>
+          <h2 class="section-title" data-i18n="faq.title">Често задавани въпроси</h2>
         </div>
 
         <div class="faq-list">
           <div class="faq-item">
             <button class="faq-question" aria-expanded="false">
-              Как знам, че парите отиват за деца?
+              <span data-i18n="faq.q1">Как знам, че парите отиват за деца?</span>
               <svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                 <polyline points="6 9 12 15 18 9"/>
               </svg>
             </button>
             <div class="faq-answer">
-              <div class="faq-answer-content">
+              <div class="faq-answer-content" data-i18n="faq.a1">
                 Ще документираме целия процес - от събирането на средства, през покупката на дрехите, до самото раздаване. Всичко ще бъде публикувано с видео и снимки.
               </div>
             </div>
@@ -622,13 +590,13 @@
 
           <div class="faq-item">
             <button class="faq-question" aria-expanded="false">
-              Мога ли да даря дрехи вместо пари?
+              <span data-i18n="faq.q2">Мога ли да даря дрехи вместо пари?</span>
               <svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                 <polyline points="6 9 12 15 18 9"/>
               </svg>
             </button>
             <div class="faq-answer">
-              <div class="faq-answer-content">
+              <div class="faq-answer-content" data-i18n="faq.a2">
                 Да, можеш! Свържи се с Алекс в <a href="https://www.instagram.com/a.donchevv" target="_blank" rel="noopener noreferrer">Instagram</a> за координация на дарението на дрехи.
               </div>
             </div>
@@ -636,13 +604,13 @@
 
           <div class="faq-item">
             <button class="faq-question" aria-expanded="false">
-              Издавате ли документ за дарение?
+              <span data-i18n="faq.q3">Издавате ли документ за дарение?</span>
               <svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                 <polyline points="6 9 12 15 18 9"/>
               </svg>
             </button>
             <div class="faq-answer">
-              <div class="faq-answer-content">
+              <div class="faq-answer-content" data-i18n="faq.a3">
                 Да, издаваме официални документи за дарение. Ние сме легитимна регистрирана фондация и можем да предоставим необходимите документи за данъчни цели.
               </div>
             </div>
@@ -650,13 +618,13 @@
 
           <div class="faq-item">
             <button class="faq-question" aria-expanded="false">
-              Какво става ако не съберете цялата сума?
+              <span data-i18n="faq.q4">Какво става ако не съберете цялата сума?</span>
               <svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                 <polyline points="6 9 12 15 18 9"/>
               </svg>
             </button>
             <div class="faq-answer">
-              <div class="faq-answer-content">
+              <div class="faq-answer-content" data-i18n="faq.a4">
                 Ще купим толкова комплекти, за колкото ни стигнат парите. Всяко дете, което облечем, е успех.
               </div>
             </div>
@@ -664,7 +632,7 @@
 
           <div class="faq-item">
             <button class="faq-question" aria-expanded="false">
-              Как мога да помогна освен с пари?
+              <span data-i18n="faq.q5">Как мога да помогна освен с пари?</span>
               <svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                 <polyline points="6 9 12 15 18 9"/>
               </svg>
@@ -672,10 +640,10 @@
             <div class="faq-answer">
               <div class="faq-answer-content">
                 <ul>
-                  <li>Сподели кампанията в социалните мрежи</li>
-                  <li>Разкажи на приятели и колеги</li>
-                  <li>Ако си фирма - стани спонсор с лого на сайта</li>
-                  <li>Свържи се с нас за други идеи</li>
+                  <li data-i18n="faq.a5.1">Сподели кампанията в социалните мрежи</li>
+                  <li data-i18n="faq.a5.2">Разкажи на приятели и колеги</li>
+                  <li data-i18n="faq.a5.3">Ако си фирма - стани спонсор с лого на сайта</li>
+                  <li data-i18n="faq.a5.4">Свържи се с нас за други идеи</li>
                 </ul>
               </div>
             </div>
@@ -683,13 +651,13 @@
 
           <div class="faq-item">
             <button class="faq-question" aria-expanded="false">
-              Кога ще видя резултата?
+              <span data-i18n="faq.q6">Кога ще видя резултата?</span>
               <svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                 <polyline points="6 9 12 15 18 9"/>
               </svg>
             </button>
             <div class="faq-answer">
-              <div class="faq-answer-content">
+              <div class="faq-answer-content" data-i18n="faq.a6">
                 Влогът от раздаването ще бъде готов до Коледа (25 декември). Ще го споделим във всички социални мрежи.
               </div>
             </div>
@@ -698,51 +666,6 @@
       </div>
     </section>
 
-    <!-- ========== Partners Section ========== -->
-    <section class="partners-section" id="partners">
-      <div class="container">
-        <div class="section-header">
-          <h2 class="section-title">Нашите партньори</h2>
-        </div>
-
-        <div class="partners-grid">
-          <div class="partner-card">
-            <span class="partner-placeholder">[Лого 1]</span>
-          </div>
-          <div class="partner-card">
-            <span class="partner-placeholder">[Лого 2]</span>
-          </div>
-          <div class="partner-card">
-            <span class="partner-placeholder">[Лого 3]</span>
-          </div>
-          <div class="partner-card">
-            <span class="partner-placeholder">[Лого 4]</span>
-          </div>
-        </div>
-
-        <div class="become-partner">
-          <h3>Стани партньор</h3>
-          <p>Твоята фирма иска да се включи? Спонсорирай кампанията и логото ти ще бъде тук.</p>
-
-          <div class="partner-tiers">
-            <div class="tier">
-              <span class="tier-name bronze">Бронзов партньор</span>
-              <span class="tier-amount">25 деца = 1,000лв</span>
-            </div>
-            <div class="tier">
-              <span class="tier-name silver">Сребърен партньор</span>
-              <span class="tier-amount">50 деца = 2,000лв</span>
-            </div>
-            <div class="tier">
-              <span class="tier-name gold">Златен партньор</span>
-              <span class="tier-amount">100 деца = 4,000лв</span>
-            </div>
-          </div>
-
-          <a href="mailto:podari.toplina@email.com" class="btn btn-primary">Свържи се с нас</a>
-        </div>
-      </div>
-    </section>
   </main>
 
   <!-- ========== Footer ========== -->
@@ -750,7 +673,7 @@
     <div class="container">
       <div class="footer-grid">
         <div class="footer-column">
-          <h4>Свържи се с нас</h4>
+          <h4 data-i18n="footer.contact">Свържи се с нас</h4>
           <p>
             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="vertical-align: middle; margin-right: 8px;">
               <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
@@ -770,7 +693,7 @@
         </div>
 
         <div class="footer-column">
-          <h4>Социални мрежи</h4>
+          <h4 data-i18n="footer.social">Социални мрежи</h4>
           <div class="footer-socials">
             <a href="https://www.instagram.com/a.donchevv" target="_blank" rel="noopener noreferrer" class="footer-social" aria-label="Instagram">
               <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
@@ -784,33 +707,34 @@
         </div>
 
         <div class="footer-column">
-          <h4>С подкрепата на</h4>
+          <h4 data-i18n="footer.support">С подкрепата на</h4>
           <img src="assets/images/icons/logo.png" alt="Лого на Фондация Добро за всеки" style="width: 120px; height: auto; margin-bottom: var(--space-4);">
           <a href="https://dobrozavseki.bg/" target="_blank" rel="noopener noreferrer">dobrozavseki.bg</a>
         </div>
       </div>
 
       <div class="footer-quote">
-        <p>"Който има две ризи, нека даде на оногова, който няма."</p>
+        <p data-i18n="footer.quote">"Който има две ризи, нека даде на оногова, който няма."</p>
         <cite>— Лука 3:11</cite>
       </div>
 
       <div class="footer-bottom">
         <div>
           <div class="footer-cross">✝</div>
-          <p class="footer-copyright">© 2025 Подари Топлина | Лична благотворителна инициатива</p>
+          <p class="footer-copyright" data-i18n="footer.copyright">© 2025 Подари Топлина | Лична благотворителна инициатива</p>
         </div>
 
         <div class="footer-links">
-          <a href="privacy-policy.html">Политика за поверителност</a>
+          <a href="privacy-policy.html" data-i18n="footer.privacy">Политика за поверителност</a>
         </div>
 
-        <p class="footer-made">Създадено с любов от Димитър, Алекс и Михаил</p>
+        <p class="footer-made" data-i18n="footer.made">Създадено с любов от Димитър, Алекс и Михаил</p>
       </div>
     </div>
   </footer>
 
   <!-- Scripts -->
+  <script src="js/i18n.js"></script>
   <script src="js/main.js"></script>
 </body>
 </html>

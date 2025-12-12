@@ -27,9 +27,6 @@
     grid-template-columns: repeat(2, 1fr);
   }
 
-  .partner-tiers {
-    grid-template-columns: repeat(3, 1fr);
-  }
 
   /* About - 2 columns with 3rd centered */
   .about-grid {
@@ -135,11 +132,6 @@
   .timeline-item:nth-child(even) .timeline-marker {
     left: -21px;
     right: auto;
-  }
-
-  /* Partners */
-  .partners-grid {
-    grid-template-columns: repeat(4, 1fr);
   }
 
   /* Footer */

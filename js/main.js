@@ -134,7 +134,7 @@
         // Fallback: use embedded data for local file access
         console.log('Using embedded donation data (fetch failed - likely local file access)');
         this.data = {
-          current: 2541,
+          current: 3312,
           goal: 5000,
           donors: [
             { name: "Димитър Маренов", amount: 250 },
@@ -146,15 +146,28 @@
             { name: "Евгени Михайлов", amount: 25 },
             { name: "Венцислав Мотовски", amount: 255 },
             { name: "Петко Желязков", amount: 250 },
+            { name: "Миглена Жишева", amount: 250 },
+            { name: "Мартин Йотов", amount: 100 },
             { name: "Теодора Димова", amount: 80 },
+            { name: "Красимир Костов", amount: 76 },
             { name: "Валентин Петров", amount: 55 },
             { name: "Николай Костов", amount: 55 },
-            { name: "Кристиян Тасев", amount: 55 },
+            { name: "Кристиян Тасев", amount: 50 },
             { name: "Виктория Пенчева", amount: 50 },
+            { name: "Стоян Николов", amount: 50 },
+            { name: "Николета Динкова", amount: 50 },
+            { name: "Таня Русева", amount: 50 },
+            { name: "Михаела Матекова", amount: 50 },
             { name: "Божидара Темелкова", amount: 25 },
             { name: "Виктори Симчева", amount: 25 },
             { name: "Дария Аврамова", amount: 25 },
             { name: "Стилиян Таневбекярски", amount: 25 },
+            { name: "Моника Янева", amount: 25 },
+            { name: "Теодора Николова", amount: 25 },
+            { name: "Петър Тенев", amount: 25 },
+            { name: "Михаил Дончев", amount: 25 },
+            { name: "Емил Гълъбов", amount: 25 },
+            { name: "Асен Михайлов", amount: 25 },
             { name: "Виктория Сарабейска", amount: 15 },
             { name: "Станислав Илиев", amount: 10 }
           ]

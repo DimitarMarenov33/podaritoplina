@@ -50,10 +50,10 @@
 
       // Timeline
       'timeline.title': 'Пътят на вашето дарение',
-      'timeline.date1': '9-13 ДЕКЕМВРИ',
+      'timeline.date1': '9-19 ДЕКЕМВРИ',
       'timeline.title1': 'Събираме средства',
       'timeline.desc1': 'Всяко дарение се отчита публично. Следете напредъка в реално време.',
-      'timeline.date2': '13-16 ДЕКЕМВРИ',
+      'timeline.date2': '13-19 ДЕКЕМВРИ',
       'timeline.title2': 'Купуваме дрехите',
       'timeline.desc2': 'Публикуваме какво сме купили с касови бележки и снимки.',
       'timeline.date3': '19 ДЕКЕМВРИ',
@@ -145,7 +145,7 @@
       'hero.countdown.days': 'days remaining until Christmas',
       'hero.title': 'Gift Warmth',
       'hero.subtitle': '200 children are waiting for their first warm clothes this winter',
-      'hero.quote': '"If you have two shirts, give one to someone who has none."',
+      'hero.quote': '"Whoever has two tunics is to share with him who has none, and whoever has food is to do likewise,"',
       'hero.quote.source': '— Luke 3:11',
       'hero.btn.donate': 'Donate Now',
       'hero.btn.learn': 'Learn More',
@@ -175,10 +175,10 @@
 
       // Timeline
       'timeline.title': 'The Journey of Your Donation',
-      'timeline.date1': 'DECEMBER 9-13',
+      'timeline.date1': 'DECEMBER 9-19',
       'timeline.title1': 'Collecting Funds',
       'timeline.desc1': 'Every donation is publicly reported. Track progress in real time.',
-      'timeline.date2': 'DECEMBER 13-16',
+      'timeline.date2': 'DECEMBER 13-19',
       'timeline.title2': 'Buying Clothes',
       'timeline.desc2': 'We publish what we bought with receipts and photos.',
       'timeline.date3': 'DECEMBER 19',
@@ -251,7 +251,7 @@
       'footer.contact': 'Contact Us',
       'footer.social': 'Social Media',
       'footer.support': 'Supported by',
-      'footer.quote': '"If you have two shirts, give one to someone who has none."',
+      'footer.quote': '"Whoever has two tunics is to share with him who has none, and whoever has food is to do likewise,"',
       'footer.copyright': '© 2025 Gift Warmth | Personal Charity Initiative',
       'footer.privacy': 'Privacy Policy',
       'footer.made': 'Made with love by Dimitar, Alexander, and Michael'
@@ -333,6 +333,9 @@
         if (svg) logoText.appendChild(svg);
         logoText.appendChild(document.createTextNode(this.currentLang === 'en' ? ' Gift Warmth' : ' Подари Топлина'));
       }
+
+      // Dispatch event for components that need to re-render (like donors list)
+      document.dispatchEvent(new CustomEvent('languageChanged', { detail: { lang: this.currentLang } }));
     },
 
     updateLangSwitcher() {

@@ -134,12 +134,29 @@
         // Fallback: use embedded data for local file access
         console.log('Using embedded donation data (fetch failed - likely local file access)');
         this.data = {
-          current: 1000,
+          current: 2541,
           goal: 5000,
           donors: [
-            { name: "Александър Дончев", amount: 500 },
             { name: "Димитър Маренов", amount: 250 },
-            { name: "Михаил Михайлов", amount: 250 }
+            { name: "Александър Дончев", amount: 500 },
+            { name: "Михаил Михайлов", amount: 250 },
+            { name: "Данчо Дачев", amount: 511 },
+            { name: "Габриел Вълков", amount: 55 },
+            { name: "Дилян Динев", amount: 25 },
+            { name: "Евгени Михайлов", amount: 25 },
+            { name: "Венцислав Мотовски", amount: 255 },
+            { name: "Петко Желязков", amount: 250 },
+            { name: "Теодора Димова", amount: 80 },
+            { name: "Валентин Петров", amount: 55 },
+            { name: "Николай Костов", amount: 55 },
+            { name: "Кристиян Тасев", amount: 55 },
+            { name: "Виктория Пенчева", amount: 50 },
+            { name: "Божидара Темелкова", amount: 25 },
+            { name: "Виктори Симчева", amount: 25 },
+            { name: "Дария Аврамова", amount: 25 },
+            { name: "Стилиян Таневбекярски", amount: 25 },
+            { name: "Виктория Сарабейска", amount: 15 },
+            { name: "Станислав Илиев", amount: 10 }
           ]
         };
       }
@@ -217,6 +234,32 @@
   const DonorsList = {
     container: null,
 
+    // Cyrillic to Latin transliteration map
+    cyrillicToLatin: {
+      'А': 'A', 'Б': 'B', 'В': 'V', 'Г': 'G', 'Д': 'D', 'Е': 'E', 'Ж': 'Zh',
+      'З': 'Z', 'И': 'I', 'Й': 'Y', 'К': 'K', 'Л': 'L', 'М': 'M', 'Н': 'N',
+      'О': 'O', 'П': 'P', 'Р': 'R', 'С': 'S', 'Т': 'T', 'У': 'U', 'Ф': 'F',
+      'Х': 'H', 'Ц': 'Ts', 'Ч': 'Ch', 'Ш': 'Sh', 'Щ': 'Sht', 'Ъ': 'A', 'Ь': '',
+      'Ю': 'Yu', 'Я': 'Ya',
+      'а': 'a', 'б': 'b', 'в': 'v', 'г': 'g', 'д': 'd', 'е': 'e', 'ж': 'zh',
+      'з': 'z', 'и': 'i', 'й': 'y', 'к': 'k', 'л': 'l', 'м': 'm', 'н': 'n',
+      'о': 'o', 'п': 'p', 'р': 'r', 'с': 's', 'т': 't', 'у': 'u', 'ф': 'f',
+      'х': 'h', 'ц': 'ts', 'ч': 'ch', 'ш': 'sh', 'щ': 'sht', 'ъ': 'a', 'ь': '',
+      'ю': 'yu', 'я': 'ya'
+    },
+
+    transliterate(text) {
+      return text.split('').map(char => this.cyrillicToLatin[char] || char).join('');
+    },
+
+    getDisplayName(name) {
+      // If English is selected, transliterate the name
+      if (window.I18n && window.I18n.currentLang === 'en') {
+        return this.transliterate(name);
+      }
+      return name;
+    },
+
     render(donors) {
       this.container = document.getElementById('donors-list');
       if (!this.container) return;
@@ -234,7 +277,7 @@
             </svg>
           </div>
           <div class="donor-info">
-            <span class="donor-name">${this.escapeHtml(donor.name)}</span>
+            <span class="donor-name">${this.escapeHtml(this.getDisplayName(donor.name))}</span>
             <span class="donor-amount">${donor.amount}<span class="donor-currency">${window.I18n ? window.I18n.t('progress.currency') : '€'}</span></span>
           </div>
         </div>
@@ -642,6 +685,13 @@
     HeroCarousel.init();
     LazyLoad.init();
     CopyButtons.init();
+
+    // Re-render donors list when language changes
+    document.addEventListener('languageChanged', () => {
+      if (ProgressBar.data && ProgressBar.data.donors) {
+        DonorsList.render(ProgressBar.data.donors);
+      }
+    });
 
     // Expose share function globally for potential button use
     window.shareWebsite = () => Share.share();

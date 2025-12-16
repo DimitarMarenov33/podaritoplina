@@ -1,40 +1,32 @@
 {
-  "current": 3312,
+  "current": 4514,
   "goal": 5000,
-  "lastUpdated": "2025-12-13T20:00:00Z",
+  "lastUpdated": "2025-12-16T12:00:00Z",
   "currency": "EUR",
   "donors": [
     {
-      "name": "Димитър Маренов",
-      "amount": 250
+      "name": "Данчо Дачев",
+      "amount": 511
     },
     {
       "name": "Александър Дончев",
       "amount": 500
     },
     {
-      "name": "Михаил Михайлов",
+      "name": "Венцислав Мотовски",
+      "amount": 255
+    },
+    {
+      "name": "НВП ООД",
+      "amount": 255
+    },
+    {
+      "name": "Димитър Маренов",
       "amount": 250
     },
     {
-      "name": "Данчо Дачев",
-      "amount": 511
-    },
-    {
-      "name": "Габриел Вълков",
-      "amount": 55
-    },
-    {
-      "name": "Дилян Динев",
-      "amount": 25
-    },
-    {
-      "name": "Евгени Михайлов",
-      "amount": 25
-    },
-    {
-      "name": "Венцислав Мотовски",
-      "amount": 255
+      "name": "Михаил Михайлов",
+      "amount": 250
     },
     {
       "name": "Петко Желязков",
@@ -45,7 +37,19 @@
       "amount": 250
     },
     {
+      "name": "Марио Кирилов",
+      "amount": 102
+    },
+    {
+      "name": "Добромир Съйков",
+      "amount": 102
+    },
+    {
       "name": "Мартин Йотов",
+      "amount": 100
+    },
+    {
+      "name": "Kamen Velev",
       "amount": 100
     },
     {
@@ -57,12 +61,20 @@
       "amount": 76
     },
     {
+      "name": "Габриел Вълков",
+      "amount": 55
+    },
+    {
       "name": "Валентин Петров",
       "amount": 55
     },
     {
       "name": "Николай Костов",
       "amount": 55
+    },
+    {
+      "name": "Асен Кемилев",
+      "amount": 53
     },
     {
       "name": "Кристиян Тасев",
@@ -87,6 +99,42 @@
     {
       "name": "Михаела Матекова",
       "amount": 50
+    },
+    {
+      "name": "Елица Колева",
+      "amount": 50
+    },
+    {
+      "name": "Валентина Теодосиева",
+      "amount": 50
+    },
+    {
+      "name": "Виктор Витанов",
+      "amount": 50
+    },
+    {
+      "name": "Miroslava Boeva",
+      "amount": 50
+    },
+    {
+      "name": "Валентина Маренова",
+      "amount": 50
+    },
+    {
+      "name": "Hr VN Grancharov",
+      "amount": 35
+    },
+    {
+      "name": "Katerina Dancheva",
+      "amount": 30
+    },
+    {
+      "name": "Дилян Динев",
+      "amount": 25
+    },
+    {
+      "name": "Евгени Михайлов",
+      "amount": 25
     },
     {
       "name": "Божидара Темелкова",
@@ -129,11 +177,59 @@
       "amount": 25
     },
     {
+      "name": "Zlatin Mingov",
+      "amount": 25
+    },
+    {
+      "name": "Zhivko Zhechev",
+      "amount": 25
+    },
+    {
+      "name": "Tanya Kostadinova",
+      "amount": 25
+    },
+    {
+      "name": "Gloriq Grigorova",
+      "amount": 25
+    },
+    {
+      "name": "Diana Grigorova",
+      "amount": 25
+    },
+    {
+      "name": "Валентина Радиева-Маренова",
+      "amount": 25
+    },
+    {
+      "name": "Kalina Midyurova",
+      "amount": 25
+    },
+    {
+      "name": "Kiril Marinov",
+      "amount": 25
+    },
+    {
+      "name": "Kristijan Lazarev",
+      "amount": 25
+    },
+    {
+      "name": "Теодор Тумбалов",
+      "amount": 25
+    },
+    {
       "name": "Виктория Сарабейска",
       "amount": 15
     },
     {
+      "name": "Божидар Пехливанов",
+      "amount": 15
+    },
+    {
       "name": "Станислав Илиев",
+      "amount": 10
+    },
+    {
+      "name": "Richard Nikolov",
       "amount": 10
     }
   ]

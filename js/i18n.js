@@ -14,6 +14,7 @@
       'nav.how': 'Как работи',
       'nav.faq': 'Въпроси',
       'nav.donate': 'Дари сега',
+      'nav.results': 'Резултати',
 
       // Hero
       'hero.countdown': 'Остават',
@@ -23,13 +24,20 @@
       'hero.quote': '"Който има две ризи, нека даде на оногова, който няма."',
       'hero.quote.source': '— Лука 3:11',
       'hero.btn.donate': 'Дари сега',
+      'hero.btn.results': 'Виж резултатите',
       'hero.btn.learn': 'Научи повече',
 
       // Progress
       'progress.currency': '€',
       'progress.goal': 'събрани от 5,000€',
+      'progress.goal.success': 'събрани!',
       'progress.children': 'деца вече имат топли дрехи',
+      'progress.children.helped': 'деца получиха топли дрехи',
       'progress.btn': 'Помогни да стигнем целта',
+      'progress.success.title': 'Кампанията приключи успешно!',
+      'progress.success.message': 'Благодарение на вашата щедрост събрахме 4,514 евро и успяхме да закупим топли шапки, блузи и панталони за над 150 деца! Макар да не достигнахме амбициозната цел от 5,000 евро, събраната сума е повече от достатъчна, за да подарим топлина на децата в нужда тази зима.',
+      'progress.success.nextSteps': 'На 19.12 ще обиколим селата и лично ще раздадем дрехите на децата. Около Коледа ще качим влог от цялото пътуване в YouTube канала на Алекс!',
+      'progress.success.youtube': 'Към YouTube канала',
 
       // Mission
       'mission.title': 'Защо го правим?',
@@ -85,6 +93,7 @@
 
       // Donation
       'donate.title': 'Подари Топлина',
+      'donate.title.complete': 'Кампанията приключи!',
       'donate.subtitle': 'Направи дарение чрез банков превод:',
       'donate.bank.iban': 'IBAN:',
       'donate.bank.bank': 'Банка:',
@@ -97,6 +106,12 @@
       'donate.copied': 'Копирано!',
       'donate.security.secure': 'Сигурен банков превод',
       'donate.security.nodata': 'Регистрирана фондация',
+      'donate.complete.title': 'Целта е достигната!',
+      'donate.complete.message': 'Благодарим ви от сърце! Благодарение на невероятната подкрепа на 57 дарители, събрахме 4,514 евро и закупихме топли шапки, блузи и панталони за над 150 деца от Видраре, Роман и Ловеч. Въпреки че не достигнахме амбициозната цел от 5,000 евро, събраната сума беше повече от достатъчна да подарим топлина на децата в нужда!',
+      'donate.complete.euros': 'евро събрани',
+      'donate.complete.children': 'деца облечени',
+      'donate.complete.donors': 'дарители',
+      'donate.complete.followup': 'Следете ни в социалните мрежи за влога от раздаването на подаръците!',
 
       // FAQ
       'faq.title': 'Често задавани въпроси',
@@ -139,6 +154,7 @@
       'nav.how': 'How It Works',
       'nav.faq': 'FAQ',
       'nav.donate': 'Donate Now',
+      'nav.results': 'Results',
 
       // Hero
       'hero.countdown': '',
@@ -148,13 +164,20 @@
       'hero.quote': '"Whoever has two tunics is to share with him who has none, and whoever has food is to do likewise,"',
       'hero.quote.source': '— Luke 3:11',
       'hero.btn.donate': 'Donate Now',
+      'hero.btn.results': 'See Results',
       'hero.btn.learn': 'Learn More',
 
       // Progress
       'progress.currency': '€',
       'progress.goal': 'raised of €5,000',
+      'progress.goal.success': 'raised!',
       'progress.children': 'children already have warm clothes',
+      'progress.children.helped': 'children received warm clothes',
       'progress.btn': 'Help us reach the goal',
+      'progress.success.title': 'Campaign Successfully Completed!',
+      'progress.success.message': 'Thanks to your generosity, we raised 4,514 euros and were able to purchase warm hats, shirts, and pants for over 150 children! Although we didn\'t reach our ambitious goal of 5,000 euros, the amount raised was more than enough to bring warmth to children in need this winter.',
+      'progress.success.nextSteps': 'On December 19th, we\'ll travel around the villages to personally hand out the clothes to the children. Around Christmas, we\'ll upload a vlog of the entire journey on Alex\'s YouTube channel!',
+      'progress.success.youtube': 'Go to YouTube channel',
 
       // Mission
       'mission.title': 'Why We Do This',
@@ -210,6 +233,7 @@
 
       // Donation
       'donate.title': 'Gift Warmth',
+      'donate.title.complete': 'Campaign Complete!',
       'donate.subtitle': 'Make a donation via bank transfer:',
       'donate.bank.iban': 'IBAN:',
       'donate.bank.bank': 'Bank:',
@@ -222,6 +246,12 @@
       'donate.copied': 'Copied!',
       'donate.security.secure': 'Secure bank transfer',
       'donate.security.nodata': 'Registered foundation',
+      'donate.complete.title': 'Goal Reached!',
+      'donate.complete.message': 'Thank you from the bottom of our hearts! Thanks to the incredible support of 57 donors, we raised 4,514 euros and purchased warm hats, shirts, and pants for over 150 children from Vidrare, Roman, and Lovech. Although we didn\'t reach our ambitious goal of 5,000 euros, the amount raised was more than enough to bring warmth to children in need!',
+      'donate.complete.euros': 'euros raised',
+      'donate.complete.children': 'children clothed',
+      'donate.complete.donors': 'donors',
+      'donate.complete.followup': 'Follow us on social media for the vlog of the gift distribution!',
 
       // FAQ
       'faq.title': 'Frequently Asked Questions',

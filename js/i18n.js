@@ -10,41 +10,33 @@
     bg: {
       // Navigation
       'nav.about': 'За нас',
-      'nav.transparency': 'Прозрачност',
       'nav.how': 'Как работи',
       'nav.faq': 'Въпроси',
+      'nav.archive': 'Предни кампании',
       'nav.donate': 'Дари сега',
-      'nav.results': 'Резултати',
 
       // Hero
       'hero.countdown': 'Остават',
-      'hero.countdown.days': 'дни до Коледа',
+      'hero.countdown.days': 'дни до Великден',
       'hero.title': 'Подари Топлина',
-      'hero.subtitle': '200 деца очакват своята първа топла дреха тази зима',
+      'hero.subtitle': '200 възрастни и деца очакват топла храна и дрехи този Великден',
       'hero.quote': '"Който има две ризи, нека даде на оногова, който няма."',
       'hero.quote.source': '— Лука 3:11',
       'hero.btn.donate': 'Дари сега',
-      'hero.btn.results': 'Виж резултатите',
       'hero.btn.learn': 'Научи повече',
 
       // Progress
       'progress.currency': '€',
       'progress.goal': 'събрани от 5,000€',
-      'progress.goal.success': 'събрани!',
-      'progress.children': 'деца вече имат топли дрехи',
-      'progress.children.helped': 'деца получиха топли дрехи',
+      'progress.children': 'възрастни и деца очакват помощ',
       'progress.btn': 'Помогни да стигнем целта',
-      'progress.success.title': 'Кампанията приключи успешно!',
-      'progress.success.message': 'Благодарение на вашата щедрост събрахме 4,514 евро и успяхме да закупим топли шапки, блузи и панталони за над 150 деца! Макар да не достигнахме амбициозната цел от 5,000 евро, събраната сума е повече от достатъчна, за да подарим топлина на децата в нужда тази зима.',
-      'progress.success.nextSteps': 'На 19.12 ще обиколим селата и лично ще раздадем дрехите на децата. Около Коледа ще качим влог от цялото пътуване в YouTube канала на Алекс!',
-      'progress.success.youtube': 'Към YouTube канала',
 
       // Mission
       'mission.title': 'Защо го правим?',
-      'mission.text': 'В цяла България има деца от финансово и социално уязвими семейства, които нямат топли дрехи за зимата. Тази година ще посетим село Видраре, град Роман и град Ловеч - един от най-бедните региони в страната според официалната статистика на НСИ. Искаме да донесем топлина там, където е най-нужна.',
-      'mission.stat.children': 'деца чакат помощ',
-      'mission.stat.price': '= 1 комплект дрехи',
-      'mission.stat.note': '1 топла горница с дълъг ръкав + 1 топла долница',
+      'mission.text': 'След невероятния успех на Коледната ни кампания, в която облякохме над 150 деца, продължаваме мисията си. Този Великден 200 възрастни и деца очакват топла храна и дрехи. Целта ни е да съберем 5,000€ и да подарим топлина там, където е най-нужна.',
+      'mission.stat.children': 'възрастни и деца очакват помощ',
+      'mission.stat.goal': 'цел на кампанията',
+      'mission.stat.note': 'Топла храна и дрехи за Великден',
 
       // About
       'about.title': 'Кои сме ние',
@@ -54,46 +46,25 @@
       'about.alex.role': 'Фитнес треньор с мисия да помага на хората да станат по-силни - физически и духовно.',
       'about.mihail.name': 'Михаил',
       'about.mihail.role': 'Студент с желание да допринесе за по-добро бъдеще на децата в нужда.',
-      'about.quote': '"Тази Коледа решихме да направим нещо различно. Не просто да дарим пари някъде, а да се включим лично. Да видим очите на децата. Да усетим какво означава да помогнеш."',
+      'about.quote': '"Коледната ни кампания беше невероятен успех — облякохме над 150 деца! Но успехът не е причина да спрем, напротив — той ни мотивира да направим още повече. Този Великден продължаваме с нова цел и нова енергия."',
 
       // Timeline
       'timeline.title': 'Пътят на вашето дарение',
-      'timeline.date1': '9-19 ДЕКЕМВРИ',
+      'timeline.date1': '7-11 АПРИЛ',
       'timeline.title1': 'Събираме средства',
       'timeline.desc1': 'Всяко дарение се отчита публично. Следете напредъка в реално време.',
-      'timeline.date2': '13-19 ДЕКЕМВРИ',
-      'timeline.title2': 'Купуваме дрехите',
+      'timeline.date2': '8-11 АПРИЛ',
+      'timeline.title2': 'Купуваме храна и дрехи',
       'timeline.desc2': 'Публикуваме какво сме купили с касови бележки и снимки.',
-      'timeline.date3': '19 ДЕКЕМВРИ',
+      'timeline.date3': '11-12 АПРИЛ',
       'timeline.title3': 'Раздаваме подаръците',
-      'timeline.desc3': 'Посещаваме селата лично и предаваме дрехите на децата.',
-      'timeline.date4': 'ДО 25 ДЕКЕМВРИ',
+      'timeline.desc3': 'Посещаваме хората лично и предаваме храната и дрехите.',
+      'timeline.date4': 'ДО 20 АПРИЛ',
       'timeline.title4': 'Споделяме влога',
       'timeline.desc4': 'Качваме пълен видео документ от цялото пътуване.',
 
-      // Map
-      'map.title': 'Къде ще бъдем',
-      'map.note': 'Кликнете върху маркерите за повече информация',
-      'map.city.vidrare': 'Видраре',
-      'map.city.roman': 'Роман',
-      'map.city.lovech': 'Ловеч',
-      'map.partner.badge': 'Партньор на място',
-      'map.partner.name': 'Фондация "Добро за всеки"',
-      'map.partner.desc': 'Нашият доверен партньор, който работи директно с общностите в Северозападна България от години.',
-      'map.partner.btn': 'Научи повече за фондацията',
-
-      // Transparency
-      'transparency.title': 'Пълна прозрачност',
-      'transparency.intro': 'Всяка стотинка е проследима. Ето какво купуваме:',
-      'transparency.sizes': 'Размери: 1-9 години',
-      'transparency.carousel.hint': 'Плъзни наляво/надясно за повече снимки',
-      'transparency.total.label': 'Общо на комплект:',
-      'transparency.total.includes': 'Включва: 1 горница с дълъг ръкав + 1 долница',
-      'transparency.btn': 'Дари 1 комплект',
-
       // Donation
-      'donate.title': 'Подари Топлина',
-      'donate.title.complete': 'Кампанията приключи!',
+      'donate.title': 'Дари за Великден',
       'donate.subtitle': 'Направи дарение чрез банков превод:',
       'donate.bank.iban': 'IBAN:',
       'donate.bank.bank': 'Банка:',
@@ -106,43 +77,36 @@
       'donate.copied': 'Копирано!',
       'donate.security.secure': 'Сигурен банков превод',
       'donate.security.nodata': 'Регистрирана фондация',
-      'donate.complete.title': 'Целта е достигната!',
-      'donate.complete.message': 'Благодарим ви от сърце! Благодарение на невероятната подкрепа на 57 дарители, събрахме 4,514 евро и закупихме топли шапки, блузи и панталони за над 150 деца от Видраре, Роман и Ловеч. Въпреки че не достигнахме амбициозната цел от 5,000 евро, събраната сума беше повече от достатъчна да подарим топлина на децата в нужда!',
-      'donate.complete.euros': 'евро събрани',
-      'donate.complete.children': 'деца облечени',
-      'donate.complete.donors': 'дарители',
-      'donate.complete.followup': 'Следете ни в социалните мрежи за влога от раздаването на подаръците!',
 
       // FAQ
       'faq.title': 'Често задавани въпроси',
-      'faq.q1': 'Как знам, че парите отиват за деца?',
-      'faq.a1': 'Ще документираме целия процес - от събирането на средства, през покупката на дрехите, до самото раздаване. Всичко ще бъде публикувано с видео и снимки.',
-      'faq.q2': 'Мога ли да даря дрехи вместо пари?',
-      'faq.a2': 'Да, можеш! Свържи се с Алекс в Instagram за координация на дарението на дрехи.',
+      'faq.q1': 'Как знам, че парите отиват за хора в нужда?',
+      'faq.a1': 'Документираме целия процес - от събирането на средства, през покупките, до самото раздаване. Всичко се публикува с видео и снимки.',
+      'faq.q2': 'Мога ли да даря дрехи или храна вместо пари?',
+      'faq.a2': 'Да, можеш! Свържи се с Алекс в Instagram за координация.',
       'faq.q3': 'Издавате ли документ за дарение?',
-      'faq.a3': 'Да, издаваме официални документи за дарение. Ние сме легитимна регистрирана фондация и можем да предоставим необходимите документи за данъчни цели.',
+      'faq.a3': 'Да, издаваме официални документи за дарение. Ние сме регистрирана фондация и можем да предоставим необходимите документи за данъчни цели.',
       'faq.q4': 'Какво става ако не съберете цялата сума?',
-      'faq.a4': 'Ще купим толкова комплекти, за колкото ни стигнат парите. Всяко дете, което облечем, е успех.',
+      'faq.a4': 'Ще купим толкова, за колкото ни стигнат парите. Всеки човек, на когото помогнем, е успех.',
       'faq.q5': 'Как мога да помогна освен с пари?',
       'faq.a5.1': 'Сподели кампанията в социалните мрежи',
       'faq.a5.2': 'Разкажи на приятели и колеги',
       'faq.a5.3': 'Ако си фирма - стани спонсор с лого на сайта',
       'faq.a5.4': 'Свържи се с нас за други идеи',
       'faq.q6': 'Кога ще видя резултата?',
-      'faq.a6': 'Влогът от раздаването ще бъде готов до Коледа (25 декември). Ще го споделим във всички социални мрежи.',
+      'faq.a6': 'Влогът от раздаването ще бъде готов до 20 април. Ще го споделим във всички социални мрежи.',
 
       // Donors
       'donors.title': 'Нашите дарители',
-      'donors.subtitle': 'Благодарим на всички, които подкрепиха каузата',
+      'donors.subtitle': 'Благодарим на всички, които подкрепят каузата',
       'donors.join': 'Искаш да се присъединиш към списъка?',
       'donors.empty': 'Бъди първият дарител!',
 
       // Footer
       'footer.contact': 'Свържи се с нас',
       'footer.social': 'Социални мрежи',
-      'footer.support': 'С подкрепата на',
       'footer.quote': '"Който има две ризи, нека даде на оногова, който няма."',
-      'footer.copyright': '© 2025 Подари Топлина | Лична благотворителна инициатива',
+      'footer.copyright': '© 2026 Фондация Подари Топлина',
       'footer.privacy': 'Политика за поверителност',
       'footer.made': 'Създадено с любов от Димитър, Алекс и Михаил'
     },
@@ -150,41 +114,33 @@
     en: {
       // Navigation
       'nav.about': 'About Us',
-      'nav.transparency': 'Transparency',
       'nav.how': 'How It Works',
       'nav.faq': 'FAQ',
+      'nav.archive': 'Past Campaigns',
       'nav.donate': 'Donate Now',
-      'nav.results': 'Results',
 
       // Hero
       'hero.countdown': '',
-      'hero.countdown.days': 'days remaining until Christmas',
+      'hero.countdown.days': 'days remaining until Easter',
       'hero.title': 'Gift Warmth',
-      'hero.subtitle': '200 children are waiting for their first warm clothes this winter',
+      'hero.subtitle': '200 adults and children are waiting for warm food and clothes this Easter',
       'hero.quote': '"Whoever has two tunics is to share with him who has none, and whoever has food is to do likewise,"',
       'hero.quote.source': '— Luke 3:11',
       'hero.btn.donate': 'Donate Now',
-      'hero.btn.results': 'See Results',
       'hero.btn.learn': 'Learn More',
 
       // Progress
       'progress.currency': '€',
       'progress.goal': 'raised of €5,000',
-      'progress.goal.success': 'raised!',
-      'progress.children': 'children already have warm clothes',
-      'progress.children.helped': 'children received warm clothes',
+      'progress.children': 'adults and children waiting for help',
       'progress.btn': 'Help us reach the goal',
-      'progress.success.title': 'Campaign Successfully Completed!',
-      'progress.success.message': 'Thanks to your generosity, we raised 4,514 euros and were able to purchase warm hats, shirts, and pants for over 150 children! Although we didn\'t reach our ambitious goal of 5,000 euros, the amount raised was more than enough to bring warmth to children in need this winter.',
-      'progress.success.nextSteps': 'On December 19th, we\'ll travel around the villages to personally hand out the clothes to the children. Around Christmas, we\'ll upload a vlog of the entire journey on Alex\'s YouTube channel!',
-      'progress.success.youtube': 'Go to YouTube channel',
 
       // Mission
       'mission.title': 'Why We Do This',
-      'mission.text': 'Across Bulgaria, there are children from financially and socially vulnerable families who lack warm clothes for winter. This year we will visit the village of Vidrare, the town of Roman, and the city of Lovech - one of the poorest regions in the country according to official statistics. We want to bring warmth where it is needed most.',
-      'mission.stat.children': 'children need help',
-      'mission.stat.price': '= 1 clothing set',
-      'mission.stat.note': '1 warm long-sleeve top + 1 warm pants',
+      'mission.text': 'After the incredible success of our Christmas campaign, where we clothed over 150 children, we continue our mission. This Easter, 200 adults and children are waiting for warm food and clothes. Our goal is to raise €5,000 and bring warmth where it is needed most.',
+      'mission.stat.children': 'adults and children need help',
+      'mission.stat.goal': 'campaign goal',
+      'mission.stat.note': 'Warm food and clothes for Easter',
 
       // About
       'about.title': 'Who We Are',
@@ -194,46 +150,25 @@
       'about.alex.role': 'Fitness trainer with a mission to help people become stronger - physically and spiritually.',
       'about.mihail.name': 'Michael',
       'about.mihail.role': 'Student with a desire to contribute to a better future for children in need.',
-      'about.quote': '"This Christmas we decided to do something different. Not just donate money somewhere, but get personally involved. To see the children\'s eyes. To feel what it means to help."',
+      'about.quote': '"Our Christmas campaign was an incredible success — we clothed over 150 children! But success is no reason to stop, on the contrary — it motivates us to do even more. This Easter we continue with a new goal and renewed energy."',
 
       // Timeline
       'timeline.title': 'The Journey of Your Donation',
-      'timeline.date1': 'DECEMBER 9-19',
+      'timeline.date1': 'APRIL 7-11',
       'timeline.title1': 'Collecting Funds',
       'timeline.desc1': 'Every donation is publicly reported. Track progress in real time.',
-      'timeline.date2': 'DECEMBER 13-19',
-      'timeline.title2': 'Buying Clothes',
+      'timeline.date2': 'APRIL 8-11',
+      'timeline.title2': 'Buying Food & Clothes',
       'timeline.desc2': 'We publish what we bought with receipts and photos.',
-      'timeline.date3': 'DECEMBER 19',
+      'timeline.date3': 'APRIL 11-12',
       'timeline.title3': 'Delivering Gifts',
-      'timeline.desc3': 'We visit the villages in person and hand over the clothes to the children.',
-      'timeline.date4': 'BY DECEMBER 25',
+      'timeline.desc3': 'We visit people in person and hand over the food and clothes.',
+      'timeline.date4': 'BY APRIL 20',
       'timeline.title4': 'Sharing the Vlog',
       'timeline.desc4': 'We upload a full video documentary of the entire journey.',
 
-      // Map
-      'map.title': 'Where We Will Be',
-      'map.note': 'Click on markers for more information',
-      'map.city.vidrare': 'Vidrare',
-      'map.city.roman': 'Roman',
-      'map.city.lovech': 'Lovech',
-      'map.partner.badge': 'Local Partner',
-      'map.partner.name': '"Good for Everyone" Foundation',
-      'map.partner.desc': 'Our trusted partner who has been working directly with communities in Northwestern Bulgaria for years.',
-      'map.partner.btn': 'Learn more about the foundation',
-
-      // Transparency
-      'transparency.title': 'Full Transparency',
-      'transparency.intro': 'Every penny is traceable. Here\'s what we buy:',
-      'transparency.sizes': 'Sizes: 1-9 years old',
-      'transparency.carousel.hint': 'Swipe left/right for more photos',
-      'transparency.total.label': 'Total per set:',
-      'transparency.total.includes': 'Includes: 1 long-sleeve top + 1 pants',
-      'transparency.btn': 'Donate 1 set',
-
       // Donation
-      'donate.title': 'Gift Warmth',
-      'donate.title.complete': 'Campaign Complete!',
+      'donate.title': 'Donate for Easter',
       'donate.subtitle': 'Make a donation via bank transfer:',
       'donate.bank.iban': 'IBAN:',
       'donate.bank.bank': 'Bank:',
@@ -246,43 +181,36 @@
       'donate.copied': 'Copied!',
       'donate.security.secure': 'Secure bank transfer',
       'donate.security.nodata': 'Registered foundation',
-      'donate.complete.title': 'Goal Reached!',
-      'donate.complete.message': 'Thank you from the bottom of our hearts! Thanks to the incredible support of 57 donors, we raised 4,514 euros and purchased warm hats, shirts, and pants for over 150 children from Vidrare, Roman, and Lovech. Although we didn\'t reach our ambitious goal of 5,000 euros, the amount raised was more than enough to bring warmth to children in need!',
-      'donate.complete.euros': 'euros raised',
-      'donate.complete.children': 'children clothed',
-      'donate.complete.donors': 'donors',
-      'donate.complete.followup': 'Follow us on social media for the vlog of the gift distribution!',
 
       // FAQ
       'faq.title': 'Frequently Asked Questions',
-      'faq.q1': 'How do I know the money goes to children?',
-      'faq.a1': 'We will document the entire process - from fundraising, through buying clothes, to distribution. Everything will be published with videos and photos.',
-      'faq.q2': 'Can I donate clothes instead of money?',
-      'faq.a2': 'Yes, you can! Contact Alexander on Instagram to coordinate clothing donations.',
+      'faq.q1': 'How do I know the money goes to people in need?',
+      'faq.a1': 'We document the entire process - from fundraising, through purchases, to distribution. Everything is published with videos and photos.',
+      'faq.q2': 'Can I donate clothes or food instead of money?',
+      'faq.a2': 'Yes, you can! Contact Alexander on Instagram to coordinate.',
       'faq.q3': 'Do you issue donation receipts?',
-      'faq.a3': 'Yes, we issue official donation documents. We are a legitimate registered foundation and can provide the necessary documents for tax purposes.',
+      'faq.a3': 'Yes, we issue official donation documents. We are a registered foundation and can provide the necessary documents for tax purposes.',
       'faq.q4': 'What happens if you don\'t raise the full amount?',
-      'faq.a4': 'We will buy as many sets as the money allows. Every child we clothe is a success.',
+      'faq.a4': 'We will buy as much as the money allows. Every person we help is a success.',
       'faq.q5': 'How can I help besides money?',
       'faq.a5.1': 'Share the campaign on social media',
       'faq.a5.2': 'Tell friends and colleagues',
       'faq.a5.3': 'If you\'re a company - become a sponsor with your logo on the site',
       'faq.a5.4': 'Contact us for other ideas',
       'faq.q6': 'When will I see the results?',
-      'faq.a6': 'The vlog from the distribution will be ready by Christmas (December 25). We\'ll share it on all social media.',
+      'faq.a6': 'The vlog from the distribution will be ready by April 20. We\'ll share it on all social media.',
 
       // Donors
       'donors.title': 'Our Donors',
-      'donors.subtitle': 'Thank you to everyone who supported the cause',
+      'donors.subtitle': 'Thank you to everyone who supports the cause',
       'donors.join': 'Want to join the list?',
       'donors.empty': 'Be the first donor!',
 
       // Footer
       'footer.contact': 'Contact Us',
       'footer.social': 'Social Media',
-      'footer.support': 'Supported by',
       'footer.quote': '"Whoever has two tunics is to share with him who has none, and whoever has food is to do likewise,"',
-      'footer.copyright': '© 2025 Gift Warmth | Personal Charity Initiative',
+      'footer.copyright': '© 2026 Gift Warmth Foundation',
       'footer.privacy': 'Privacy Policy',
       'footer.made': 'Made with love by Dimitar, Alexander, and Michael'
     }
@@ -352,8 +280,8 @@
 
       // Update page title
       document.title = this.currentLang === 'en'
-        ? 'Gift Warmth | Christmas Initiative for Children in Need'
-        : 'Подари Топлина | Коледна инициатива за деца в нужда';
+        ? 'Gift Warmth | Easter Initiative for People in Need'
+        : 'Подари Топлина | Великденска инициатива за хора в нужда';
 
       // Update logo text
       const logoText = document.querySelector('.logo');

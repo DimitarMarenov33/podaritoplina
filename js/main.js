@@ -1,6 +1,6 @@
 /**
  * Подари Топлина - Main JavaScript
- * Christmas Charity Initiative 2025
+ * Easter Charity Initiative 2026
  */
 
 (function() {
@@ -11,8 +11,8 @@
   // ==========================================================================
 
   const CONFIG = {
-    targetDate: new Date('2025-12-20T00:00:00'),
-    christmasDate: new Date('2025-12-25T00:00:00'),
+    targetDate: new Date('2026-04-11T00:00:00'),
+    easterDate: new Date('2026-04-12T00:00:00'),
     donationsDataPath: 'data/donations.json',
     pricePerChild: 25, // 25 EUR per child (was 50 BGN)
     animationDuration: 2000,
@@ -90,7 +90,7 @@
 
     update() {
       const now = new Date();
-      const diff = CONFIG.christmasDate - now;
+      const diff = CONFIG.easterDate - now;
 
       if (diff <= 0) {
         this.daysElement.textContent = '0';
@@ -134,43 +134,9 @@
         // Fallback: use embedded data for local file access
         console.log('Using embedded donation data (fetch failed - likely local file access)');
         this.data = {
-          current: 3312,
+          current: 0,
           goal: 5000,
-          donors: [
-            { name: "Димитър Маренов", amount: 250 },
-            { name: "Александър Дончев", amount: 500 },
-            { name: "Михаил Михайлов", amount: 250 },
-            { name: "Данчо Дачев", amount: 511 },
-            { name: "Габриел Вълков", amount: 55 },
-            { name: "Дилян Динев", amount: 25 },
-            { name: "Евгени Михайлов", amount: 25 },
-            { name: "Венцислав Мотовски", amount: 255 },
-            { name: "Петко Желязков", amount: 250 },
-            { name: "Миглена Жишева", amount: 250 },
-            { name: "Мартин Йотов", amount: 100 },
-            { name: "Теодора Димова", amount: 80 },
-            { name: "Красимир Костов", amount: 76 },
-            { name: "Валентин Петров", amount: 55 },
-            { name: "Николай Костов", amount: 55 },
-            { name: "Кристиян Тасев", amount: 50 },
-            { name: "Виктория Пенчева", amount: 50 },
-            { name: "Стоян Николов", amount: 50 },
-            { name: "Николета Динкова", amount: 50 },
-            { name: "Таня Русева", amount: 50 },
-            { name: "Михаела Матекова", amount: 50 },
-            { name: "Божидара Темелкова", amount: 25 },
-            { name: "Виктори Симчева", amount: 25 },
-            { name: "Дария Аврамова", amount: 25 },
-            { name: "Стилиян Таневбекярски", amount: 25 },
-            { name: "Моника Янева", amount: 25 },
-            { name: "Теодора Николова", amount: 25 },
-            { name: "Петър Тенев", amount: 25 },
-            { name: "Михаил Дончев", amount: 25 },
-            { name: "Емил Гълъбов", amount: 25 },
-            { name: "Асен Михайлов", amount: 25 },
-            { name: "Виктория Сарабейска", amount: 15 },
-            { name: "Станислав Илиев", amount: 10 }
-          ]
+          donors: []
         };
       }
 
@@ -459,7 +425,7 @@
   };
 
   // ==========================================================================
-  // Snow Animation
+  // Spring Petals Animation
   // ==========================================================================
 
   const SnowAnimation = {
@@ -474,25 +440,25 @@
         return;
       }
 
-      this.createSnowflakes();
+      this.createPetals();
     },
 
-    createSnowflakes() {
-      const snowflakeChars = ['❄', '❅', '❆', '•'];
+    createPetals() {
+      const petalChars = ['✿', '❀', '✾', '•'];
 
       for (let i = 0; i < CONFIG.snowflakeCount; i++) {
-        const snowflake = document.createElement('div');
-        snowflake.className = 'snowflake';
-        snowflake.textContent = snowflakeChars[Math.floor(Math.random() * snowflakeChars.length)];
+        const petal = document.createElement('div');
+        petal.className = 'snowflake';
+        petal.textContent = petalChars[Math.floor(Math.random() * petalChars.length)];
 
         // Random positioning and animation
-        snowflake.style.left = `${Math.random() * 100}%`;
-        snowflake.style.fontSize = `${Math.random() * 10 + 8}px`;
-        snowflake.style.opacity = Math.random() * 0.6 + 0.2;
-        snowflake.style.animationDuration = `${Math.random() * 10 + 10}s`;
-        snowflake.style.animationDelay = `${Math.random() * 10}s`;
+        petal.style.left = `${Math.random() * 100}%`;
+        petal.style.fontSize = `${Math.random() * 10 + 8}px`;
+        petal.style.opacity = Math.random() * 0.5 + 0.2;
+        petal.style.animationDuration = `${Math.random() * 10 + 10}s`;
+        petal.style.animationDelay = `${Math.random() * 10}s`;
 
-        this.container.appendChild(snowflake);
+        this.container.appendChild(petal);
       }
     }
   };
@@ -504,7 +470,7 @@
   const Share = {
     data: {
       title: 'Подари Топлина',
-      text: '200 деца от Северозападна България очакват топли дрехи за Коледа. Можеш ли да помогнеш?',
+      text: '200 възрастни и деца очакват топла храна и дрехи за Великден. Можеш ли да помогнеш?',
       url: window.location.href
     },
 
@@ -565,6 +531,10 @@
     },
 
     nextImage() {
+      // Pause video in current slide if any
+      const currentVideo = this.images[this.currentIndex].querySelector('video');
+      if (currentVideo) currentVideo.pause();
+
       // Remove active class from current image
       this.images[this.currentIndex].classList.remove('active');
 
@@ -573,6 +543,10 @@
 
       // Add active class to new image
       this.images[this.currentIndex].classList.add('active');
+
+      // Play video in new slide if any
+      const newVideo = this.images[this.currentIndex].querySelector('video');
+      if (newVideo) newVideo.play().catch(() => {});
     },
 
     stopRotation() {

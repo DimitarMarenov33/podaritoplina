@@ -445,8 +445,9 @@
 
     createPetals() {
       const petalChars = ['✿', '❀', '✾', '•'];
+      const count = window.innerWidth <= 768 ? Math.floor(CONFIG.snowflakeCount / 3) : CONFIG.snowflakeCount;
 
-      for (let i = 0; i < CONFIG.snowflakeCount; i++) {
+      for (let i = 0; i < count; i++) {
         const petal = document.createElement('div');
         petal.className = 'snowflake';
         petal.textContent = petalChars[Math.floor(Math.random() * petalChars.length)];
@@ -521,6 +522,11 @@
       // Check for reduced motion preference
       if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
         return;
+      }
+
+      // On mobile, use fewer slides (skip some videos to save bandwidth)
+      if (window.innerWidth <= 768) {
+        this.rotationSpeed = 6000;
       }
 
       this.startRotation();
@@ -662,6 +668,13 @@
   // ==========================================================================
 
   function init() {
+    // On mobile, set videos to preload="none" to save bandwidth
+    if (window.innerWidth <= 768) {
+      document.querySelectorAll('.hero-bg-video video').forEach(video => {
+        video.preload = 'none';
+      });
+    }
+
     Countdown.init();
     ProgressBar.init();
     FAQ.init();

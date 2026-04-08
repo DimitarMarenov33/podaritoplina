@@ -3,6 +3,253 @@
    ========================================================================== */
 
 /* ==========================================================================
+   Mobile-First Base Optimizations (max-width: 575px)
+   ========================================================================== */
+
+@media (max-width: 575px) {
+  /* Tighter section spacing on mobile */
+  section {
+    padding: var(--space-10) 0;
+  }
+
+  .section-header {
+    margin-bottom: var(--space-8);
+  }
+
+  .section-title {
+    font-size: var(--text-2xl);
+  }
+
+  /* Hero optimizations */
+  .hero {
+    min-height: 100svh;
+  }
+
+  .hero-content {
+    padding: var(--space-6) var(--space-4);
+  }
+
+  .hero-title {
+    font-size: var(--text-3xl);
+    margin-bottom: var(--space-4);
+  }
+
+  .hero-subtitle {
+    font-size: var(--text-base);
+    margin-bottom: var(--space-6);
+  }
+
+  .hero-quote {
+    font-size: var(--text-xl);
+    padding: var(--space-4) var(--space-5);
+    margin-bottom: var(--space-6);
+  }
+
+  .hero-quote span {
+    font-size: var(--text-sm);
+  }
+
+  .hero-countdown {
+    font-size: var(--text-xs);
+    padding: var(--space-1) var(--space-4);
+    margin-bottom: var(--space-4);
+  }
+
+  .hero-buttons .btn {
+    width: 100%;
+    max-width: 280px;
+  }
+
+  .hero-scroll {
+    display: none;
+  }
+
+  /* Progress section */
+  .progress-section {
+    padding: var(--space-8) 0;
+  }
+
+  .progress-bar-container {
+    height: 24px;
+  }
+
+  .progress-current {
+    font-size: var(--text-2xl);
+  }
+
+  .progress-children {
+    font-size: var(--text-base);
+  }
+
+  /* Donors grid - single column on small screens */
+  .donors-list {
+    grid-template-columns: 1fr;
+  }
+
+  .donors-inline {
+    margin-top: var(--space-8);
+    padding-top: var(--space-6);
+  }
+
+  /* Mission stats */
+  .stat-card {
+    padding: var(--space-6);
+  }
+
+  .stat-icon {
+    width: 48px;
+    height: 48px;
+  }
+
+  .stat-number {
+    font-size: var(--text-2xl);
+  }
+
+  /* About section */
+  .about-image {
+    width: 150px;
+    height: 150px;
+  }
+
+  .about-name {
+    font-size: var(--text-xl);
+  }
+
+  .quote-text {
+    font-size: var(--text-xl);
+  }
+
+  /* Timeline */
+  .timeline-item {
+    padding-left: 50px;
+  }
+
+  .timeline-marker {
+    width: 36px;
+    height: 36px;
+    font-size: var(--text-base);
+  }
+
+  .timeline::before {
+    left: 17px;
+  }
+
+  .timeline-content {
+    padding: var(--space-4);
+  }
+
+  .timeline-title {
+    font-size: var(--text-lg);
+  }
+
+  /* Bank / Donation section */
+  .bank-transfer.bank-transfer-main {
+    padding: var(--space-6);
+  }
+
+  .bank-details {
+    padding: var(--space-4);
+  }
+
+  .bank-row {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: var(--space-1);
+    padding: var(--space-3) 0;
+  }
+
+  .bank-value {
+    font-size: var(--text-sm);
+    word-break: break-all;
+    max-width: 100%;
+  }
+
+  .copy-btn {
+    align-self: flex-start;
+    margin-top: var(--space-1);
+  }
+
+  .donation-subtitle {
+    margin-bottom: var(--space-6);
+  }
+
+  .payment-security {
+    margin-top: var(--space-6);
+  }
+
+  /* FAQ */
+  .faq-question {
+    padding: var(--space-4) 0;
+    font-size: var(--text-base);
+    gap: var(--space-3);
+  }
+
+  .faq-question span {
+    flex: 1;
+    min-width: 0;
+  }
+
+  .faq-answer-content {
+    font-size: var(--text-sm);
+  }
+
+  /* Footer */
+  .footer {
+    padding: var(--space-10) 0 var(--space-6);
+  }
+
+  .footer-quote p {
+    font-size: var(--text-xl);
+  }
+
+  .footer-grid {
+    gap: var(--space-6);
+  }
+}
+
+/* ==========================================================================
+   Very Small Devices (small phones, 375px and below)
+   ========================================================================== */
+
+@media (max-width: 375px) {
+  .container {
+    padding: 0 var(--space-3);
+  }
+
+  .hero-title {
+    font-size: var(--text-2xl);
+  }
+
+  .hero-quote {
+    font-size: var(--text-lg);
+    padding: var(--space-3) var(--space-4);
+  }
+
+  .hero-buttons .btn {
+    font-size: var(--text-base);
+    padding: var(--space-3) var(--space-6);
+  }
+
+  .logo {
+    font-size: var(--text-base);
+  }
+
+  .logo-icon {
+    width: 32px;
+    height: 32px;
+  }
+
+  .about-image {
+    width: 120px;
+    height: 120px;
+  }
+
+  .bank-value {
+    font-size: var(--text-xs);
+  }
+}
+
+/* ==========================================================================
    Small Devices (landscape phones, 576px and up)
    ========================================================================== */
 

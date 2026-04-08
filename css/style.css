@@ -29,6 +29,7 @@ body {
   background-color: var(--white);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  -webkit-tap-highlight-color: transparent;
 }
 
 img {
@@ -155,6 +156,7 @@ section {
   border-radius: var(--radius-full);
   transition: all var(--transition-base);
   text-decoration: none;
+  min-height: 44px;
 }
 
 .btn-primary {
@@ -391,11 +393,14 @@ section {
   width: 100%;
   max-width: 300px;
   height: 100vh;
+  height: 100dvh;
   background: var(--white);
   padding: var(--space-20) var(--space-6);
   box-shadow: var(--shadow-xl);
   transition: right var(--transition-base);
   z-index: var(--z-modal);
+  overflow-y: auto;
+  overscroll-behavior: contain;
 }
 
 .mobile-menu.open {
@@ -1356,6 +1361,7 @@ section {
   transition: all var(--transition-fast);
   cursor: pointer;
   border: none;
+  min-height: 36px;
 }
 
 .copy-btn:hover {

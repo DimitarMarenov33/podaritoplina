@@ -668,13 +668,6 @@
   // ==========================================================================
 
   function init() {
-    // On mobile, set videos to preload="none" to save bandwidth
-    if (window.innerWidth <= 768) {
-      document.querySelectorAll('.hero-bg-video video').forEach(video => {
-        video.preload = 'none';
-      });
-    }
-
     Countdown.init();
     ProgressBar.init();
     FAQ.init();

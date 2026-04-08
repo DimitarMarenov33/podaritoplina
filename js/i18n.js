@@ -33,7 +33,7 @@
 
       // Mission
       'mission.title': 'Защо го правим?',
-      'mission.text': 'След невероятния успех на Коледната ни кампания, в която облякохме над 150 деца, продължаваме мисията си. Този Великден 200 възрастни и деца очакват топла храна и дрехи. Целта ни е да съберем 5,000€ и да подарим топлина там, където е най-нужна.',
+      'mission.text': 'След невероятния успех на Коледната ни кампания, в която облякохме над 131 деца, продължаваме мисията си. Този Великден 200 възрастни и деца очакват топла храна и дрехи. Целта ни е да съберем 5,000€ и да подарим топлина там, където е най-нужна.',
       'mission.stat.children': 'възрастни и деца очакват помощ',
       'mission.stat.goal': 'цел на кампанията',
       'mission.stat.note': 'Топла храна и дрехи за Великден',
@@ -46,7 +46,7 @@
       'about.alex.role': 'Фитнес треньор с мисия да помага на хората да станат по-силни - физически и духовно.',
       'about.mihail.name': 'Михаил',
       'about.mihail.role': 'Студент с желание да допринесе за по-добро бъдеще на децата в нужда.',
-      'about.quote': '"Коледната ни кампания беше невероятен успех — облякохме над 150 деца! Но успехът не е причина да спрем, напротив — той ни мотивира да направим още повече. Този Великден продължаваме с нова цел и нова енергия."',
+      'about.quote': '"Коледната ни кампания беше невероятен успех — облякохме над 131 деца! Но успехът не е причина да спрем, напротив — той ни мотивира да направим още повече. Този Великден продължаваме с нова цел и нова енергия."',
 
       // Timeline
       'timeline.title': 'Пътят на вашето дарение',
@@ -80,19 +80,20 @@
 
       // FAQ
       'faq.title': 'Често задавани въпроси',
-      'faq.q1': 'Как знам, че парите отиват за хора в нужда?',
+      'faq.q1': 'Как знам, че дарението отива за хора в нужда?',
       'faq.a1': 'Документираме целия процес - от събирането на средства, през покупките, до самото раздаване. Всичко се публикува с видео и снимки.',
-      'faq.q2': 'Мога ли да даря дрехи или храна вместо пари?',
-      'faq.a2': 'Да, можеш! Свържи се с Алекс в Instagram за координация.',
+      'faq.q2': 'Мога ли да даря дрехи или храна вместо финансово дарение?',
+      'faq.a2': 'Да, можеш! Приемаме дарения на дрехи и храна. Свържи се с Алекс в Instagram за координация.',
       'faq.q3': 'Издавате ли документ за дарение?',
       'faq.a3': 'Да, издаваме официални документи за дарение. Ние сме регистрирана фондация и можем да предоставим необходимите документи за данъчни цели.',
       'faq.q4': 'Какво става ако не съберете цялата сума?',
-      'faq.a4': 'Ще купим толкова, за колкото ни стигнат парите. Всеки човек, на когото помогнем, е успех.',
-      'faq.q5': 'Как мога да помогна освен с пари?',
-      'faq.a5.1': 'Сподели кампанията в социалните мрежи',
-      'faq.a5.2': 'Разкажи на приятели и колеги',
-      'faq.a5.3': 'Ако си фирма - стани спонсор с лого на сайта',
-      'faq.a5.4': 'Свържи се с нас за други идеи',
+      'faq.a4': 'Ще купим толкова, за колкото ни стигнат даренията. Всеки човек, на когото помогнем, е успех.',
+      'faq.q5': 'Как мога да помогна освен с финансово дарение?',
+      'faq.a5.1': 'Дари храна или дрехи',
+      'faq.a5.2': 'Сподели кампанията в социалните мрежи',
+      'faq.a5.3': 'Разкажи на приятели и колеги',
+      'faq.a5.4': 'Ако си фирма - стани спонсор с лого на сайта',
+      'faq.a5.5': 'Свържи се с нас за други идеи',
       'faq.q6': 'Кога ще видя резултата?',
       'faq.a6': 'Влогът от раздаването ще бъде готов до 20 април. Ще го споделим във всички социални мрежи.',
 
@@ -137,7 +138,7 @@
 
       // Mission
       'mission.title': 'Why We Do This',
-      'mission.text': 'After the incredible success of our Christmas campaign, where we clothed over 150 children, we continue our mission. This Easter, 200 adults and children are waiting for warm food and clothes. Our goal is to raise €5,000 and bring warmth where it is needed most.',
+      'mission.text': 'After the incredible success of our Christmas campaign, where we clothed over 131 children, we continue our mission. This Easter, 200 adults and children are waiting for warm food and clothes. Our goal is to raise €5,000 and bring warmth where it is needed most.',
       'mission.stat.children': 'adults and children need help',
       'mission.stat.goal': 'campaign goal',
       'mission.stat.note': 'Warm food and clothes for Easter',
@@ -150,7 +151,7 @@
       'about.alex.role': 'Fitness trainer with a mission to help people become stronger - physically and spiritually.',
       'about.mihail.name': 'Michael',
       'about.mihail.role': 'Student with a desire to contribute to a better future for children in need.',
-      'about.quote': '"Our Christmas campaign was an incredible success — we clothed over 150 children! But success is no reason to stop, on the contrary — it motivates us to do even more. This Easter we continue with a new goal and renewed energy."',
+      'about.quote': '"Our Christmas campaign was an incredible success — we clothed over 131 children! But success is no reason to stop, on the contrary — it motivates us to do even more. This Easter we continue with a new goal and renewed energy."',
 
       // Timeline
       'timeline.title': 'The Journey of Your Donation',
@@ -184,19 +185,20 @@
 
       // FAQ
       'faq.title': 'Frequently Asked Questions',
-      'faq.q1': 'How do I know the money goes to people in need?',
+      'faq.q1': 'How do I know my donation goes to people in need?',
       'faq.a1': 'We document the entire process - from fundraising, through purchases, to distribution. Everything is published with videos and photos.',
-      'faq.q2': 'Can I donate clothes or food instead of money?',
-      'faq.a2': 'Yes, you can! Contact Alexander on Instagram to coordinate.',
+      'faq.q2': 'Can I donate clothes or food instead of a financial donation?',
+      'faq.a2': 'Yes, you can! We accept donations of clothes and food. Contact Alexander on Instagram to coordinate.',
       'faq.q3': 'Do you issue donation receipts?',
       'faq.a3': 'Yes, we issue official donation documents. We are a registered foundation and can provide the necessary documents for tax purposes.',
       'faq.q4': 'What happens if you don\'t raise the full amount?',
-      'faq.a4': 'We will buy as much as the money allows. Every person we help is a success.',
-      'faq.q5': 'How can I help besides money?',
-      'faq.a5.1': 'Share the campaign on social media',
-      'faq.a5.2': 'Tell friends and colleagues',
-      'faq.a5.3': 'If you\'re a company - become a sponsor with your logo on the site',
-      'faq.a5.4': 'Contact us for other ideas',
+      'faq.a4': 'We will buy as much as the donations allow. Every person we help is a success.',
+      'faq.q5': 'How can I help besides a financial donation?',
+      'faq.a5.1': 'Donate food or clothes',
+      'faq.a5.2': 'Share the campaign on social media',
+      'faq.a5.3': 'Tell friends and colleagues',
+      'faq.a5.4': 'If you\'re a company - become a sponsor with your logo on the site',
+      'faq.a5.5': 'Contact us for other ideas',
       'faq.q6': 'When will I see the results?',
       'faq.a6': 'The vlog from the distribution will be ready by April 20. We\'ll share it on all social media.',
 

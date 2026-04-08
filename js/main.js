@@ -257,7 +257,7 @@
           </div>
           <div class="donor-info">
             <span class="donor-name">${this.escapeHtml(this.getDisplayName(donor.name))}</span>
-            <span class="donor-amount">${donor.amount}<span class="donor-currency">${window.I18n ? window.I18n.t('progress.currency') : '€'}</span></span>
+            ${donor.amount ? `<span class="donor-amount">${donor.amount}<span class="donor-currency">${window.I18n ? window.I18n.t('progress.currency') : '€'}</span></span>` : ''}
           </div>
         </div>
       `).join('');

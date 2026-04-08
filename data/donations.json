@@ -1,7 +1,11 @@
 {
-  "current": 0,
+  "current": 800,
   "goal": 5000,
-  "lastUpdated": "2026-04-07T00:00:00Z",
+  "lastUpdated": "2026-04-08T00:00:00Z",
   "currency": "EUR",
-  "donors": []
+  "donors": [
+    { "name": "Алекс Дончев", "amount": "" },
+    { "name": "Михаил Михайлов", "amount": "" },
+    { "name": "Данчо", "amount": "" }
+  ]
 }

@@ -14,6 +14,9 @@
     targetDate: new Date('2026-04-11T00:00:00'),
     easterDate: new Date('2026-04-12T00:00:00'),
     donationsDataPath: 'data/donations.json',
+    googleSheetCsvUrl: 'https://docs.google.com/spreadsheets/d/e/2PACX-1vS31CPplPeiTpp8JDxy2_8AdUZpDuquUMiFhv9sSrS7Kk7WgGzVD7Lwbp95bj-HBwpL2B64m994ORYh/pub?output=csv',
+    sheetCacheTTL: 5 * 60 * 1000, // 5 minutes cache
+    donationGoal: 5000,
     pricePerChild: 25, // 25 EUR per child (was 50 BGN)
     animationDuration: 2000,
     snowflakeCount: 50
@@ -111,7 +114,7 @@
     currentAmountEl: null,
     childrenCountEl: null,
     hasAnimated: false,
-    data: { current: 0, goal: 10000, donors: [] },
+    data: { current: 0, goal: 5000, donors: [] },
 
     init() {
       this.progressBar = document.getElementById('progressBar');
@@ -125,19 +128,24 @@
     },
 
     async loadData() {
-      try {
-        const response = await fetch(CONFIG.donationsDataPath);
-        if (response.ok) {
-          this.data = await response.json();
+      // Try Google Sheets first, fall back to local JSON
+      const sheetData = await this.loadFromGoogleSheet();
+      if (sheetData) {
+        this.data = sheetData;
+      } else {
+        try {
+          const response = await fetch(CONFIG.donationsDataPath);
+          if (response.ok) {
+            this.data = await response.json();
+          }
+        } catch (error) {
+          console.log('Using embedded donation data (fetch failed - likely local file access)');
+          this.data = {
+            current: 0,
+            goal: CONFIG.donationGoal,
+            donors: []
+          };
         }
-      } catch (error) {
-        // Fallback: use embedded data for local file access
-        console.log('Using embedded donation data (fetch failed - likely local file access)');
-        this.data = {
-          current: 0,
-          goal: 5000,
-          donors: []
-        };
       }
 
       // Render donors immediately
@@ -145,6 +153,92 @@
 
       // Show initial values immediately (without animation)
       this.showInitialValues();
+    },
+
+    async loadFromGoogleSheet() {
+      try {
+        // Check sessionStorage cache
+        const cached = sessionStorage.getItem('donations_cache');
+        if (cached) {
+          const { data, timestamp } = JSON.parse(cached);
+          if (Date.now() - timestamp < CONFIG.sheetCacheTTL) {
+            return data;
+          }
+        }
+
+        const response = await fetch(CONFIG.googleSheetCsvUrl);
+        if (!response.ok) return null;
+
+        const csv = await response.text();
+        const data = this.parseCsv(csv);
+
+        // Cache the result
+        sessionStorage.setItem('donations_cache', JSON.stringify({
+          data: data,
+          timestamp: Date.now()
+        }));
+
+        return data;
+      } catch (error) {
+        console.log('Google Sheet fetch failed, falling back to local data');
+        return null;
+      }
+    },
+
+    parseCsv(csv) {
+      const lines = csv.trim().split('\n');
+      // Skip header row
+      const donors = [];
+      let total = 0;
+
+      for (let i = 1; i < lines.length; i++) {
+        const line = lines[i].trim();
+        if (!line) continue;
+
+        // Parse CSV respecting quoted fields
+        const fields = this.parseCsvLine(line);
+        const name = (fields[0] || '').trim();
+        const amount = parseFloat(fields[1]) || 0;
+
+        if (!name) continue;
+
+        donors.push({
+          name: name,
+          amount: amount > 0 ? amount.toString() : ''
+        });
+        total += amount;
+      }
+
+      return {
+        current: total,
+        goal: CONFIG.donationGoal,
+        donors: donors
+      };
+    },
+
+    parseCsvLine(line) {
+      const fields = [];
+      let current = '';
+      let inQuotes = false;
+
+      for (let i = 0; i < line.length; i++) {
+        const ch = line[i];
+        if (ch === '"') {
+          if (inQuotes && line[i + 1] === '"') {
+            current += '"';
+            i++;
+          } else {
+            inQuotes = !inQuotes;
+          }
+        } else if (ch === ',' && !inQuotes) {
+          fields.push(current);
+          current = '';
+        } else {
+          current += ch;
+        }
+      }
+      fields.push(current);
+      return fields;
     },
 
     showInitialValues() {

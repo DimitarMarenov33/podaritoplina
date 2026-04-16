@@ -189,7 +189,6 @@
       const lines = csv.trim().split('\n');
       // Skip header row
       const donors = [];
-      let total = 0;
 
       for (let i = 1; i < lines.length; i++) {
         const line = lines[i].trim();
@@ -198,19 +197,14 @@
         // Parse CSV respecting quoted fields
         const fields = this.parseCsvLine(line);
         const name = (fields[0] || '').trim();
-        const amount = parseFloat(fields[1]) || 0;
 
         if (!name) continue;
 
-        donors.push({
-          name: name,
-          amount: amount > 0 ? amount.toString() : ''
-        });
-        total += amount;
+        donors.push({ name: name });
       }
 
       return {
-        current: total,
+        current: 0,
         goal: CONFIG.donationGoal,
         donors: donors
       };
@@ -351,7 +345,6 @@
           </div>
           <div class="donor-info">
             <span class="donor-name">${this.escapeHtml(this.getDisplayName(donor.name))}</span>
-            ${donor.amount ? `<span class="donor-amount">${donor.amount}<span class="donor-currency">${window.I18n ? window.I18n.t('progress.currency') : '€'}</span></span>` : ''}
           </div>
         </div>
       `).join('');

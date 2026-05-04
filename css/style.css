@@ -1684,9 +1684,7 @@ section {
 
 /* Donors Inline (in progress section) */
 .donors-inline {
-  margin-top: var(--space-10);
-  padding-top: var(--space-8);
-  border-top: 1px solid var(--warm-gray);
+  margin-top: 0;
 }
 
 .donors-inline-title {

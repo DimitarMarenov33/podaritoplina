@@ -25,6 +25,13 @@
       'hero.btn.donate': 'Дари сега',
       'hero.btn.learn': 'Научи повече',
 
+      // Easter 2026 Results
+      'results.badge': 'Великден 2026 — кампанията приключи',
+      'results.title': 'Благодарим ви — заедно успяхме!',
+      'results.subtitle': 'Великденската ни кампания приключи. Ето какво постигнахме заедно с вас:',
+      'results.stat.pensioners': 'пенсионери, нахранени по 3 пъти в храм „Свети Георги Победоносец"',
+      'results.stat.children': 'деца, облечени с нови дрехи',
+
       // Progress
       'progress.currency': '€',
       'progress.goal': 'събрани от 5,000€',
@@ -129,6 +136,13 @@
       'hero.quote.source': '— Luke 3:11',
       'hero.btn.donate': 'Donate Now',
       'hero.btn.learn': 'Learn More',
+
+      // Easter 2026 Results
+      'results.badge': 'Easter 2026 — Campaign Complete',
+      'results.title': 'Thank you — together we did it!',
+      'results.subtitle': 'Our Easter campaign has wrapped up. Here\'s what we achieved with your support:',
+      'results.stat.pensioners': 'pensioners fed 3 times at "St. George the Victorious" church',
+      'results.stat.children': 'children dressed in new clothes',
 
       // Progress
       'progress.currency': '€',

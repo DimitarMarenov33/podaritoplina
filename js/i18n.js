@@ -1,234 +1,261 @@
 /**
- * Internationalization (i18n) System
- * Supports Bulgarian (bg) and English (en)
+ * Internationalization (i18n) for the home page — Bulgarian (bg) and English (en).
+ * data-i18n -> textContent, data-i18n-html -> innerHTML, data-i18n-label -> aria-label.
  */
-
-(function() {
+(function () {
   'use strict';
 
   const translations = {
     bg: {
-      // Navigation
-      'nav.about': 'За нас',
-      'nav.how': 'Как работи',
+      'page.title': 'Подари Топлина | Облечи дете за Коледа 2026',
+      'skip': 'Към съдържанието',
+      'brand': 'Подари Топлина',
+      'nav.how': 'Как помагаме',
+      'nav.campaigns': 'Предни кампании',
       'nav.faq': 'Въпроси',
-      'nav.archive': 'Предни кампании',
-      'nav.donate': 'Дари сега',
+      'nav.donate': 'Дари',
 
-      // Hero
-      'hero.countdown': 'Остават',
-      'hero.countdown.days': 'дни до Великден',
-      'hero.title': 'Подари Топлина',
-      'hero.subtitle': '200 възрастни и деца очакват топла храна и дрехи този Великден',
-      'hero.quote': '"Който има две ризи, нека даде на оногова, който няма."',
-      'hero.quote.source': '— Лука 3:11',
-      'hero.btn.donate': 'Дари сега',
-      'hero.btn.learn': 'Научи повече',
+      'hero.eyebrow': 'Коледа 2026 · Пловдивска област',
+      'count': 'Остават {n} дни до Коледа',
+      'count.one': 'Остава {n} ден до Коледа',
+      'hero.title': 'Тази Коледа облечи <em>едно дете</em> от Пловдивско в нови топли дрехи',
+      'hero.lede': 'Някои деца в Пловдивска област ще посрещнат зимата без топло яке. С <b data-price>35 €</b> ти им даряваш нови топли дрехи и Библия. Ние ги купуваме, опаковаме и предаваме лично в ръцете на детето преди 25 декември.',
+      'hero.proof1': '131 деца облечени миналата Коледа',
+      'hero.proof2': '57 дарители',
+      'hero.proof3': 'Регистрирана фондация',
 
-      // Easter 2026 Results
-      'results.badge': 'Великден 2026 — кампанията приключи',
-      'results.title': 'Благодарим ви — заедно успяхме!',
-      'results.subtitle': 'Великденската ни кампания приключи. Ето какво постигнахме заедно с вас:',
-      'results.stat.pensioners': 'пенсионери, нахранени по 3 пъти в храм „Свети Георги Победоносец"',
-      'results.stat.children': 'деца, облечени с нови дрехи',
+      'gal.label': 'Снимки от предните ни кампании',
+      'gal.prev': 'Предишна снимка',
+      'gal.next': 'Следваща снимка',
+      'gal.pause': 'Спри въртенето',
+      'gal.play': 'Пусни въртенето',
+      'cap.e': 'Великден 2026 · 22 деца получиха нови дрехи',
+      'cap.x': 'Коледа 2025 · 131 деца облечени за зимата',
+      'cap.p': 'Коледа 2025 · купуваме и опаковаме дрехите сами',
 
-      // Progress
-      'progress.currency': '€',
-      'progress.goal': 'събрани от 5,000€',
-      'progress.children': 'възрастни и деца очакват помощ',
-      'progress.btn': 'Помогни да стигнем целта',
+      'ben.title': 'Какво прави твоят подарък',
+      'ben.1.t': 'Детето отива на училище топло.',
+      'ben.1.d': 'Новите дрехи са само негови — не наследени, не втора ръка.',
+      'ben.2.t': 'Получава и Библия.',
+      'ben.2.d': 'Подарък, който остава, когато дрехите омалеят.',
+      'ben.3.t': 'Предаваме всичко лично.',
+      'ben.3.d': 'Купуваме дрехите сами и ги даваме в ръцете на детето. Без посредници.',
+      'ben.4.t': 'Виждаш къде отиде дарението ти.',
+      'ben.4.d': 'Публикуваме снимки и видео от раздаването — точно както с 131 деца миналата Коледа.',
 
-      // Mission
-      'mission.title': 'Защо го правим?',
-      'mission.text': 'След невероятния успех на Коледната ни кампания, в която облякохме над 131 деца, продължаваме мисията си. Този Великден 200 възрастни и деца очакват топла храна и дрехи. Целта ни е да съберем 5,000€ и да подарим топлина там, където е най-нужна.',
-      'mission.stat.children': 'възрастни и деца очакват помощ',
-      'mission.stat.goal': 'цел на кампанията',
-      'mission.stat.note': 'Топла храна и дрехи за Великден',
+      'offer.label': 'Подарък за едно дете',
+      'offer.per': 'на дете',
+      'offer.inc1': 'Нови топли дрехи',
+      'offer.inc2': 'Библия',
+      'offer.inc3': 'Лично предаване преди Коледа',
+      'offer.qty': 'Колко деца ще облечеш?',
+      'offer.k1': '1 дете',
+      'offer.k2': '2 деца',
+      'offer.k3': '3 деца',
+      'offer.k5': '5 деца',
+      'offer.cta': 'Облечи',
+      'offer.kid': '{n} дете',
+      'offer.kids': '{n} деца',
+      'offer.note': 'Банков превод · Отнема 2 минути. Усещането остава много по-дълго.',
 
-      // About
-      'about.title': 'Кои сме ние',
-      'about.dimitar.name': 'Димитър',
-      'about.dimitar.role': 'Софтуерен разработчик и инженер с мисия да създава технологии, които наистина помагат.',
-      'about.alex.name': 'Алекс',
-      'about.alex.role': 'Фитнес треньор с мисия да помага на хората да станат по-силни - физически и духовно.',
-      'about.mihail.name': 'Михаил',
-      'about.mihail.role': 'Студент с желание да допринесе за по-добро бъдеще на децата в нужда.',
-      'about.quote': '"Коледната ни кампания беше невероятен успех — облякохме над 131 деца! Но успехът не е причина да спрем, напротив — той ни мотивира да направим още повече. Този Великден продължаваме с нова цел и нова енергия."',
+      'pay.title': 'Преведи сумата по тази сметка:',
+      'pay.recipient': 'Получател',
+      'pay.bank': 'Банка',
+      'pay.amount': 'Сума',
+      'pay.reason': 'Основание',
+      'pay.reason.value': 'Дарение Подари Топлина',
+      'pay.copy': 'Копирай',
+      'pay.copied': 'Копирано',
+      'pay.thanks': 'Благодарим ти. Ще публикуваме снимки, когато подаръкът стигне до детето.',
 
-      // Timeline
-      'timeline.title': 'Пътят на вашето дарение',
-      'timeline.date1': '7-11 АПРИЛ',
-      'timeline.title1': 'Събираме средства',
-      'timeline.desc1': 'Всяко дарение се отчита публично. Следете напредъка в реално време.',
-      'timeline.date2': '8-11 АПРИЛ',
-      'timeline.title2': 'Купуваме храна и дрехи',
-      'timeline.desc2': 'Публикуваме какво сме купили с касови бележки и снимки.',
-      'timeline.date3': '11-12 АПРИЛ',
-      'timeline.title3': 'Раздаваме подаръците',
-      'timeline.desc3': 'Посещаваме хората лично и предаваме храната и дрехите.',
-      'timeline.date4': 'ДО 20 АПРИЛ',
-      'timeline.title4': 'Споделяме влога',
-      'timeline.desc4': 'Качваме пълен видео документ от цялото пътуване.',
+      'trust.title': 'Защо да ни се довериш',
+      'trust.1.t': 'Регистрирана фондация',
+      'trust.1.d': 'Издаваме документ за дарение за данъчни цели.',
+      'trust.2.t': 'Всичко е публично',
+      'trust.2.d': 'Показваме покупките, снимки и видео от раздаването.',
+      'trust.3.t': 'Правили сме го два пъти',
+      'trust.3.d': '131 деца облечени по Коледа 2025. 150 пенсионери нахранени и 22 деца облечени по Великден 2026.',
 
-      // Donation
-      'donate.title': 'Дари за Великден',
-      'donate.subtitle': 'Направи дарение чрез банков превод:',
-      'donate.bank.iban': 'IBAN:',
-      'donate.bank.bank': 'Банка:',
-      'donate.bank.address': 'Адрес:',
-      'donate.bank.address.value': 'София, 1000 Ул. Джон Ленън 8',
-      'donate.bank.recipient': 'Получател:',
-      'donate.bank.reason': 'Основание:',
-      'donate.bank.reason.value': 'Дарение Подари Топлина',
-      'donate.copy': 'Копирай',
-      'donate.copied': 'Копирано!',
-      'donate.security.secure': 'Сигурен банков превод',
-      'donate.security.nodata': 'Регистрирана фондация',
-
-      // FAQ
-      'faq.title': 'Често задавани въпроси',
-      'faq.q1': 'Как знам, че дарението отива за хора в нужда?',
-      'faq.a1': 'Документираме целия процес - от събирането на средства, през покупките, до самото раздаване. Всичко се публикува с видео и снимки.',
-      'faq.q2': 'Мога ли да даря дрехи или храна вместо финансово дарение?',
-      'faq.a2': 'Да, можеш! Приемаме дарения на дрехи и храна. Свържи се с Алекс в Instagram за координация.',
+      'faq.title': 'Въпроси преди да дариш',
+      'faq.q1': 'Как да съм сигурен, че дарението стига до детето?',
+      'faq.a1': 'Купуваме дрехите сами и ги раздаваме лично. Документираме целия процес — от покупката до раздаването — и публикуваме снимки и видео. Така направихме и при предните две кампании.',
+      'faq.q2': 'Защо подарявате и Библия?',
+      'faq.a2': 'Вярваме, че топлината не е само в дрехите. Библията е подарък, който остава, когато дрехите омалеят — и напомня на детето, че някой се е сетил за него.',
       'faq.q3': 'Издавате ли документ за дарение?',
-      'faq.a3': 'Да, издаваме официални документи за дарение. Ние сме регистрирана фондация и можем да предоставим необходимите документи за данъчни цели.',
-      'faq.q4': 'Какво става ако не съберете цялата сума?',
-      'faq.a4': 'Ще купим толкова, за колкото ни стигнат даренията. Всеки човек, на когото помогнем, е успех.',
-      'faq.q5': 'Как мога да помогна освен с финансово дарение?',
-      'faq.a5.1': 'Дари храна или дрехи',
-      'faq.a5.2': 'Сподели кампанията в социалните мрежи',
-      'faq.a5.3': 'Разкажи на приятели и колеги',
-      'faq.a5.4': 'Ако си фирма - стани спонсор с лого на сайта',
-      'faq.a5.5': 'Свържи се с нас за други идеи',
+      'faq.a3': 'Да. Ние сме регистрирана фондация и издаваме официален документ за дарение за данъчни цели.',
+      'faq.q4': 'Мога ли да даря дрехи вместо пари?',
+      'faq.a4': 'Да. Пиши на Алекс в <a href="https://www.instagram.com/a.donchevv" target="_blank" rel="noopener noreferrer">Instagram</a> и ще уговорим как да ги предадеш.',
+      'faq.q5': 'Какво става, ако не съберете цялата сума?',
+      'faq.a5': 'Купуваме толкова, за колкото стигнат даренията. Всяко облечено дете е успех.',
       'faq.q6': 'Кога ще видя резултата?',
-      'faq.a6': 'Влогът от раздаването ще бъде готов до 20 април. Ще го споделим във всички социални мрежи.',
+      'faq.a6': 'Раздаваме подаръците преди Коледа и веднага след това публикуваме снимки и видео в социалните мрежи.',
+      'faq.q7': 'Как мога да помогна освен с пари?',
+      'faq.a7': 'Сподели тази страница с приятели и колеги. Ако си фирма, стани спонсор с лого на сайта — пиши ни в Instagram.',
 
-      // Donors
-      'donors.title': 'Нашите дарители',
-      'donors.subtitle': 'Благодарим на всички, които подкрепят каузата',
-      'donors.join': 'Искаш да се присъединиш към списъка?',
-      'donors.empty': 'Бъди първият дарител!',
+      'past.eyebrow': 'Доказателството',
+      'past.title': 'Вече го направихме два пъти',
+      'past.lede': 'Ето какво постигнахме заедно с вас досега.',
+      'past.x.date': 'Декември 2025',
+      'past.x.title': 'Коледа 2025',
+      'past.x.s1': 'събрани',
+      'past.x.s2': 'деца облечени',
+      'past.x.s3': 'дарители',
+      'past.x.text': 'Първата ни кампания. Купихме топли шапки, блузи и панталони и на 19 декември ги раздадохме лично на деца от Видраре, Роман и Ловеч.',
+      'past.x.vlog': 'Гледай влога',
+      'past.x.more': 'Снимки и дарители',
+      'past.e.date': 'Април 2026',
+      'past.e.title': 'Великден 2026',
+      'past.e.s1': 'пенсионери нахранени по 3 пъти',
+      'past.e.s2': 'деца облечени в нови дрехи',
+      'past.e.text': 'Нахранихме 150 пенсионери по три пъти в храм „Свети Георги Победоносец“ и облякохме 22 деца в нови дрехи.',
 
-      // Footer
-      'footer.contact': 'Свържи се с нас',
-      'footer.social': 'Социални мрежи',
-      'footer.quote': '"Който има две ризи, нека даде на оногова, който няма."',
-      'footer.copyright': '© 2026 Фондация Подари Топлина',
+      'band.title': 'Едно дете в Пловдивско чака своя подарък.',
+      'band.cta': 'Облечи едно дете',
+
+      'team.eyebrow': 'Кои сме ние',
+      'team.title': 'Хората зад Подари Топлина',
+      'team.lede': 'Не сме голяма организация. Затова всяко дарение минава през нашите ръце.',
+      'team.dimitar.name': 'Димитър',
+      'team.dimitar.role': 'Софтуерен разработчик с мисия да създава технологии, които наистина помагат.',
+      'team.alex.name': 'Алекс',
+      'team.alex.role': 'Фитнес треньор с мисия да помага на хората да станат по-силни — физически и духовно.',
+      'team.mihail.name': 'Михаил',
+      'team.mihail.role': 'Студент с желание да допринесе за по-добро бъдеще на децата в нужда.',
+
+      'footer.quote': '„Който има две ризи, нека даде на оногова, който няма.“',
+      'footer.source': 'Лука 3:11',
+      'footer.contact': 'Контакт',
+      'footer.more': 'Още',
+      'footer.archive': 'Коледа 2025',
       'footer.privacy': 'Политика за поверителност',
+      'footer.copyright': '© 2026 Фондация Подари Топлина',
       'footer.made': 'Създадено с любов от Димитър, Алекс и Михаил'
     },
 
     en: {
-      // Navigation
-      'nav.about': 'About Us',
+      'page.title': 'Gift Warmth | Dress a Child for Christmas 2026',
+      'skip': 'Skip to content',
+      'brand': 'Gift Warmth',
       'nav.how': 'How It Works',
+      'nav.campaigns': 'Past Campaigns',
       'nav.faq': 'FAQ',
-      'nav.archive': 'Past Campaigns',
-      'nav.donate': 'Donate Now',
+      'nav.donate': 'Donate',
 
-      // Hero
-      'hero.countdown': '',
-      'hero.countdown.days': 'days remaining until Easter',
-      'hero.title': 'Gift Warmth',
-      'hero.subtitle': '200 adults and children are waiting for warm food and clothes this Easter',
-      'hero.quote': '"Whoever has two tunics is to share with him who has none, and whoever has food is to do likewise,"',
-      'hero.quote.source': '— Luke 3:11',
-      'hero.btn.donate': 'Donate Now',
-      'hero.btn.learn': 'Learn More',
+      'hero.eyebrow': 'Christmas 2026 · Plovdiv Region',
+      'count': 'Only {n} days until Christmas',
+      'count.one': 'Only {n} day until Christmas',
+      'hero.title': 'This Christmas, dress <em>one child</em> from the Plovdiv region in new warm clothes',
+      'hero.lede': 'Some children in the Plovdiv region will face winter without a warm coat. For <b data-price>€35</b> you give one of them new warm clothes and a Bible. We buy them, wrap them and put them in the child’s hands ourselves before December 25.',
+      'hero.proof1': '131 children dressed last Christmas',
+      'hero.proof2': '57 donors',
+      'hero.proof3': 'Registered foundation',
 
-      // Easter 2026 Results
-      'results.badge': 'Easter 2026 — Campaign Complete',
-      'results.title': 'Thank you — together we did it!',
-      'results.subtitle': 'Our Easter campaign has wrapped up. Here\'s what we achieved with your support:',
-      'results.stat.pensioners': 'pensioners fed 3 times at "St. George the Victorious" church',
-      'results.stat.children': 'children dressed in new clothes',
+      'gal.label': 'Photos from our past campaigns',
+      'gal.prev': 'Previous photo',
+      'gal.next': 'Next photo',
+      'gal.pause': 'Pause slideshow',
+      'gal.play': 'Play slideshow',
+      'cap.e': 'Easter 2026 · 22 children got new clothes',
+      'cap.x': 'Christmas 2025 · 131 children dressed for winter',
+      'cap.p': 'Christmas 2025 · buying and packing the clothes ourselves',
 
-      // Progress
-      'progress.currency': '€',
-      'progress.goal': 'raised of €5,000',
-      'progress.children': 'adults and children waiting for help',
-      'progress.btn': 'Help us reach the goal',
+      'ben.title': 'What your gift does',
+      'ben.1.t': 'A child walks to school warm.',
+      'ben.1.d': 'The clothes are new and theirs alone — not handed down, not second-hand.',
+      'ben.2.t': 'They get a Bible too.',
+      'ben.2.d': 'A gift that stays long after the clothes are outgrown.',
+      'ben.3.t': 'We deliver everything in person.',
+      'ben.3.d': 'We buy the clothes ourselves and hand them to each child. No middlemen.',
+      'ben.4.t': 'You see where your money went.',
+      'ben.4.d': 'We publish photos and video of the handover — just as we did for 131 children last Christmas.',
 
-      // Mission
-      'mission.title': 'Why We Do This',
-      'mission.text': 'After the incredible success of our Christmas campaign, where we clothed over 131 children, we continue our mission. This Easter, 200 adults and children are waiting for warm food and clothes. Our goal is to raise €5,000 and bring warmth where it is needed most.',
-      'mission.stat.children': 'adults and children need help',
-      'mission.stat.goal': 'campaign goal',
-      'mission.stat.note': 'Warm food and clothes for Easter',
+      'offer.label': 'A gift for one child',
+      'offer.per': 'per child',
+      'offer.inc1': 'New warm clothes',
+      'offer.inc2': 'A Bible',
+      'offer.inc3': 'Delivered in person before Christmas',
+      'offer.qty': 'How many children will you dress?',
+      'offer.k1': '1 child',
+      'offer.k2': '2 children',
+      'offer.k3': '3 children',
+      'offer.k5': '5 children',
+      'offer.cta': 'Dress',
+      'offer.kid': '{n} child',
+      'offer.kids': '{n} children',
+      'offer.note': 'Bank transfer · Takes 2 minutes. The feeling lasts much longer.',
 
-      // About
-      'about.title': 'Who We Are',
-      'about.dimitar.name': 'Dimitar',
-      'about.dimitar.role': 'Software developer and engineer with a mission to create technologies that truly help.',
-      'about.alex.name': 'Alexander',
-      'about.alex.role': 'Fitness trainer with a mission to help people become stronger - physically and spiritually.',
-      'about.mihail.name': 'Michael',
-      'about.mihail.role': 'Student with a desire to contribute to a better future for children in need.',
-      'about.quote': '"Our Christmas campaign was an incredible success — we clothed over 131 children! But success is no reason to stop, on the contrary — it motivates us to do even more. This Easter we continue with a new goal and renewed energy."',
+      'pay.title': 'Transfer the amount to this account:',
+      'pay.recipient': 'Recipient',
+      'pay.bank': 'Bank',
+      'pay.amount': 'Amount',
+      'pay.reason': 'Reference',
+      'pay.reason.value': 'Donation Gift Warmth',
+      'pay.copy': 'Copy',
+      'pay.copied': 'Copied',
+      'pay.thanks': 'Thank you. We’ll publish photos when your gift reaches the child.',
 
-      // Timeline
-      'timeline.title': 'The Journey of Your Donation',
-      'timeline.date1': 'APRIL 7-11',
-      'timeline.title1': 'Collecting Funds',
-      'timeline.desc1': 'Every donation is publicly reported. Track progress in real time.',
-      'timeline.date2': 'APRIL 8-11',
-      'timeline.title2': 'Buying Food & Clothes',
-      'timeline.desc2': 'We publish what we bought with receipts and photos.',
-      'timeline.date3': 'APRIL 11-12',
-      'timeline.title3': 'Delivering Gifts',
-      'timeline.desc3': 'We visit people in person and hand over the food and clothes.',
-      'timeline.date4': 'BY APRIL 20',
-      'timeline.title4': 'Sharing the Vlog',
-      'timeline.desc4': 'We upload a full video documentary of the entire journey.',
+      'trust.title': 'Why you can trust us',
+      'trust.1.t': 'Registered foundation',
+      'trust.1.d': 'We issue an official donation receipt for tax purposes.',
+      'trust.2.t': 'Everything is public',
+      'trust.2.d': 'We show what we bought, with photos and video of the handover.',
+      'trust.3.t': 'We’ve done it twice',
+      'trust.3.d': '131 children dressed at Christmas 2025. 150 pensioners fed and 22 children dressed at Easter 2026.',
 
-      // Donation
-      'donate.title': 'Donate for Easter',
-      'donate.subtitle': 'Make a donation via bank transfer:',
-      'donate.bank.iban': 'IBAN:',
-      'donate.bank.bank': 'Bank:',
-      'donate.bank.address': 'Address:',
-      'donate.bank.address.value': 'Sofia, 1000 John Lennon St. 8',
-      'donate.bank.recipient': 'Recipient:',
-      'donate.bank.reason': 'Reference:',
-      'donate.bank.reason.value': 'Donation Gift Warmth',
-      'donate.copy': 'Copy',
-      'donate.copied': 'Copied!',
-      'donate.security.secure': 'Secure bank transfer',
-      'donate.security.nodata': 'Registered foundation',
-
-      // FAQ
-      'faq.title': 'Frequently Asked Questions',
-      'faq.q1': 'How do I know my donation goes to people in need?',
-      'faq.a1': 'We document the entire process - from fundraising, through purchases, to distribution. Everything is published with videos and photos.',
-      'faq.q2': 'Can I donate clothes or food instead of a financial donation?',
-      'faq.a2': 'Yes, you can! We accept donations of clothes and food. Contact Alexander on Instagram to coordinate.',
+      'faq.title': 'Questions before you give',
+      'faq.q1': 'How do I know my donation reaches the child?',
+      'faq.a1': 'We buy the clothes ourselves and hand them out in person. We document the whole process — from purchase to handover — and publish photos and video. We did the same for both previous campaigns.',
+      'faq.q2': 'Why a Bible?',
+      'faq.a2': 'We believe warmth isn’t only about clothes. A Bible is a gift that stays when the clothes are outgrown — and reminds a child that someone thought of them.',
       'faq.q3': 'Do you issue donation receipts?',
-      'faq.a3': 'Yes, we issue official donation documents. We are a registered foundation and can provide the necessary documents for tax purposes.',
-      'faq.q4': 'What happens if you don\'t raise the full amount?',
-      'faq.a4': 'We will buy as much as the donations allow. Every person we help is a success.',
-      'faq.q5': 'How can I help besides a financial donation?',
-      'faq.a5.1': 'Donate food or clothes',
-      'faq.a5.2': 'Share the campaign on social media',
-      'faq.a5.3': 'Tell friends and colleagues',
-      'faq.a5.4': 'If you\'re a company - become a sponsor with your logo on the site',
-      'faq.a5.5': 'Contact us for other ideas',
+      'faq.a3': 'Yes. We are a registered foundation and issue an official donation document for tax purposes.',
+      'faq.q4': 'Can I donate clothes instead of money?',
+      'faq.a4': 'Yes. Message Alex on <a href="https://www.instagram.com/a.donchevv" target="_blank" rel="noopener noreferrer">Instagram</a> and we’ll arrange the handover.',
+      'faq.q5': 'What if you don’t raise the full amount?',
+      'faq.a5': 'We buy as much as the donations allow. Every child we dress is a success.',
       'faq.q6': 'When will I see the results?',
-      'faq.a6': 'The vlog from the distribution will be ready by April 20. We\'ll share it on all social media.',
+      'faq.a6': 'We hand out the gifts before Christmas and publish photos and video on social media right after.',
+      'faq.q7': 'How else can I help?',
+      'faq.a7': 'Share this page with friends and colleagues. If you’re a company, become a sponsor with your logo on the site — message us on Instagram.',
 
-      // Donors
-      'donors.title': 'Our Donors',
-      'donors.subtitle': 'Thank you to everyone who supports the cause',
-      'donors.join': 'Want to join the list?',
-      'donors.empty': 'Be the first donor!',
+      'past.eyebrow': 'The proof',
+      'past.title': 'We’ve done this twice already',
+      'past.lede': 'Here’s what we’ve achieved with you so far.',
+      'past.x.date': 'December 2025',
+      'past.x.title': 'Christmas 2025',
+      'past.x.s1': 'raised',
+      'past.x.s2': 'children dressed',
+      'past.x.s3': 'donors',
+      'past.x.text': 'Our first campaign. We bought warm hats, sweaters and trousers and on December 19 handed them out in person to children in Vidrare, Roman and Lovech.',
+      'past.x.vlog': 'Watch the vlog',
+      'past.x.more': 'Photos & donors',
+      'past.e.date': 'April 2026',
+      'past.e.title': 'Easter 2026',
+      'past.e.s1': 'pensioners fed 3 times',
+      'past.e.s2': 'children dressed in new clothes',
+      'past.e.text': 'We fed 150 pensioners three times at St. George the Victorious church and dressed 22 children in new clothes.',
 
-      // Footer
-      'footer.contact': 'Contact Us',
-      'footer.social': 'Social Media',
-      'footer.quote': '"Whoever has two tunics is to share with him who has none, and whoever has food is to do likewise,"',
-      'footer.copyright': '© 2026 Gift Warmth Foundation',
+      'band.title': 'A child in the Plovdiv region is waiting for their gift.',
+      'band.cta': 'Dress a child',
+
+      'team.eyebrow': 'Who we are',
+      'team.title': 'The people behind Gift Warmth',
+      'team.lede': 'We are not a big organisation. That’s why every donation passes through our own hands.',
+      'team.dimitar.name': 'Dimitar',
+      'team.dimitar.role': 'Software developer on a mission to build technology that truly helps.',
+      'team.alex.name': 'Alex',
+      'team.alex.role': 'Fitness coach on a mission to help people grow stronger — physically and spiritually.',
+      'team.mihail.name': 'Michael',
+      'team.mihail.role': 'Student who wants to build a better future for children in need.',
+
+      'footer.quote': '“Whoever has two tunics is to share with him who has none.”',
+      'footer.source': 'Luke 3:11',
+      'footer.contact': 'Contact',
+      'footer.more': 'More',
+      'footer.archive': 'Christmas 2025',
       'footer.privacy': 'Privacy Policy',
-      'footer.made': 'Made with love by Dimitar, Alexander, and Michael'
+      'footer.copyright': '© 2026 Gift Warmth Foundation',
+      'footer.made': 'Made with love by Dimitar, Alex and Michael'
     }
   };
 
@@ -238,120 +265,49 @@
     supportedLangs: ['bg', 'en'],
 
     init() {
-      // Check for stored preference (only use if user explicitly chose a language)
-      const storedLang = localStorage.getItem('preferred-language');
-
-      if (storedLang && this.supportedLangs.includes(storedLang)) {
-        this.currentLang = storedLang;
-      } else {
-        // Default to Bulgarian (primary language of the site)
-        this.currentLang = 'bg';
-      }
-
-      this.applyTranslations();
-      this.updateLangSwitcher();
-      this.updateHtmlLang();
+      let stored = null;
+      try { stored = localStorage.getItem('preferred-language'); } catch {}
+      this.currentLang = this.supportedLangs.includes(stored) ? stored : this.defaultLang;
+      this.apply();
     },
 
     setLanguage(lang) {
       if (!this.supportedLangs.includes(lang)) return;
-
       this.currentLang = lang;
-      localStorage.setItem('preferred-language', lang);
-      this.applyTranslations();
-      this.updateLangSwitcher();
-      this.updateHtmlLang();
+      try { localStorage.setItem('preferred-language', lang); } catch {}
+      this.apply();
     },
 
     t(key) {
-      // Check if key exists in current language (allows empty strings)
-      if (key in translations[this.currentLang]) {
-        return translations[this.currentLang][key];
-      }
-      // Fallback to default language
-      if (key in translations[this.defaultLang]) {
-        return translations[this.defaultLang][key];
-      }
+      if (key in translations[this.currentLang]) return translations[this.currentLang][key];
+      if (key in translations[this.defaultLang]) return translations[this.defaultLang][key];
       return key;
     },
 
-    applyTranslations() {
-      // Translate all elements with data-i18n attribute
-      document.querySelectorAll('[data-i18n]').forEach(el => {
-        const key = el.getAttribute('data-i18n');
-        const translation = this.t(key);
-
-        if (el.tagName === 'INPUT' || el.tagName === 'TEXTAREA') {
-          el.placeholder = translation;
-        } else {
-          el.textContent = translation;
-        }
-      });
-
-      // Translate elements with data-i18n-html (for HTML content)
-      document.querySelectorAll('[data-i18n-html]').forEach(el => {
-        const key = el.getAttribute('data-i18n-html');
-        el.innerHTML = this.t(key);
-      });
-
-      // Update page title
-      document.title = this.currentLang === 'en'
-        ? 'Gift Warmth | Easter Initiative for People in Need'
-        : 'Подари Топлина | Великденска инициатива за хора в нужда';
-
-      // Update logo text
-      const logoText = document.querySelector('.logo');
-      if (logoText) {
-        const svg = logoText.querySelector('svg');
-        logoText.innerHTML = '';
-        if (svg) logoText.appendChild(svg);
-        logoText.appendChild(document.createTextNode(this.currentLang === 'en' ? ' Gift Warmth' : ' Подари Топлина'));
-      }
-
-      // Dispatch event for components that need to re-render (like donors list)
-      document.dispatchEvent(new CustomEvent('languageChanged', { detail: { lang: this.currentLang } }));
-    },
-
-    updateLangSwitcher() {
-      const switcher = document.getElementById('lang-switcher');
-      if (switcher) {
-        const buttons = switcher.querySelectorAll('button');
-        buttons.forEach(btn => {
-          btn.classList.toggle('active', btn.dataset.lang === this.currentLang);
-        });
-      }
-    },
-
-    updateHtmlLang() {
+    apply() {
+      document.querySelectorAll('[data-i18n]').forEach((el) => { el.textContent = this.t(el.dataset.i18n); });
+      document.querySelectorAll('[data-i18n-html]').forEach((el) => { el.innerHTML = this.t(el.dataset.i18nHtml); });
+      document.querySelectorAll('[data-i18n-label]').forEach((el) => { el.setAttribute('aria-label', this.t(el.dataset.i18nLabel)); });
+      document.title = this.t('page.title');
       document.documentElement.lang = this.currentLang;
+      document.querySelectorAll('.lang-btn').forEach((btn) => {
+        const on = btn.dataset.lang === this.currentLang;
+        btn.classList.toggle('active', on);
+        btn.setAttribute('aria-pressed', String(on));
+      });
+      document.dispatchEvent(new CustomEvent('languageChanged', { detail: { lang: this.currentLang } }));
     }
   };
 
-  // Expose globally
   window.I18n = I18n;
 
-  // Initialize when DOM is ready
-  function initI18n() {
+  function start() {
     I18n.init();
-
-    // Add click handlers for language buttons
-    document.querySelectorAll('.lang-btn').forEach(btn => {
-      btn.addEventListener('click', () => {
-        const lang = btn.dataset.lang;
-        I18n.setLanguage(lang);
-
-        // Update all language buttons (including mobile)
-        document.querySelectorAll('.lang-btn').forEach(b => {
-          b.classList.toggle('active', b.dataset.lang === lang);
-        });
-      });
+    document.querySelectorAll('.lang-btn').forEach((btn) => {
+      btn.addEventListener('click', () => I18n.setLanguage(btn.dataset.lang));
     });
   }
 
-  if (document.readyState === 'loading') {
-    document.addEventListener('DOMContentLoaded', initI18n);
-  } else {
-    initI18n();
-  }
-
+  if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', start);
+  else start();
 })();

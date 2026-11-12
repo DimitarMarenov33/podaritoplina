@@ -21,7 +21,8 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Literata:ital,opsz,wght@0,7..72,400..700;1,7..72,400..600&family=Onest:wght@400..700&display=swap" rel="stylesheet">
   <link rel="preload" as="image" href="assets/images/gallery/01.jpg" fetchpriority="high">
-  <link rel="stylesheet" href="css/site.css">
+  <!-- Bump ?v= on css/site.css, js/i18n.js and js/home.js whenever any of them changes: GitHub Pages caches files for 10 min and a stale script shows raw keys. -->
+  <link rel="stylesheet" href="css/site.css?v=20261112">
 </head>
 <body>
   <svg width="0" height="0" style="position:absolute" aria-hidden="true">
@@ -45,6 +46,7 @@
       <symbol id="i-instagram" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><path d="M17.5 6.5h.01"/></symbol>
       <symbol id="i-linkedin" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-4 0v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></symbol>
       <symbol id="i-facebook" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></symbol>
+      <symbol id="i-heart" viewBox="0 0 24 24" fill="currentColor"><path d="M12 21.35 10.55 20C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54z"/></symbol>
       <symbol id="i-phone" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></symbol>
     </defs>
   </svg>
@@ -66,7 +68,7 @@
         <button type="button" class="lang-btn active" data-lang="bg" aria-label="Български">BG</button>
         <button type="button" class="lang-btn" data-lang="en" aria-label="English">EN</button>
       </div>
-      <a href="#offer" class="btn btn-berry btn-sm" data-i18n="nav.donate">Дари</a>
+      <a href="#offer" class="btn btn-berry btn-sm header-cta" data-i18n="nav.donate">Дари</a>
     </div>
   </header>
 
@@ -90,6 +92,7 @@
 
         <div class="gallery" data-gallery role="region" aria-roledescription="carousel" data-i18n-label="gal.label" aria-label="Снимки от предните ни кампании">
           <div class="gallery-stage">
+            <div class="slides" data-track>
             <figure class="slide is-active" aria-roledescription="slide">
               <span class="slide-bg" style="background-image:url(assets/images/gallery/thumb/01.jpg)"></span>
               <img src="assets/images/gallery/01.jpg" fetchpriority="high" width="1600" height="1200" alt="Екипът на Подари Топлина с децата и подаръците им, Великден 2026">
@@ -145,6 +148,7 @@
               <img data-src="assets/images/gallery/11.jpg" width="1600" height="1200" alt="Екипът с децата и подаръците, Великден 2026">
               <figcaption data-i18n="cap.e">Великден 2026 · 22 деца получиха нови дрехи</figcaption>
             </figure>
+            </div>
             <button type="button" class="g-btn g-prev" data-prev data-i18n-label="gal.prev" aria-label="Предишна снимка"><svg width="22" height="22" aria-hidden="true"><use href="#i-left"/></svg></button>
             <button type="button" class="g-btn g-next" data-next data-i18n-label="gal.next" aria-label="Следваща снимка"><svg width="22" height="22" aria-hidden="true"><use href="#i-right"/></svg></button>
             <div class="g-meta">
@@ -209,11 +213,18 @@
                 <label><input type="radio" name="kids" value="3"><span data-i18n="offer.k3">3 деца</span></label>
                 <label><input type="radio" name="kids" value="5"><span data-i18n="offer.k5">5 деца</span></label>
               </div>
+              <label class="qty-custom">
+                <span data-i18n="offer.custom">Или въведи друга сума</span>
+                <span class="amount-field">
+                  <input type="number" name="amount" min="1" max="100000" step="any" inputmode="decimal" autocomplete="off" placeholder="напр. 50…" data-i18n-placeholder="offer.customPh">
+                  <span class="amount-suffix" aria-hidden="true">€</span>
+                </span>
+              </label>
             </fieldset>
 
             <details class="pay">
               <summary class="btn btn-berry btn-lg">
-                <span><span data-i18n="offer.cta">Облечи</span> <span data-kids>1 дете</span> — <span data-total>35 €</span></span>
+                <span data-cta>Облечи 1 дете — 35 €</span>
                 <svg class="arrow" width="20" height="20" aria-hidden="true"><use href="#i-arrow"/></svg>
               </summary>
               <div class="pay-panel">
@@ -243,9 +254,19 @@
                     <button type="button" class="copy" data-copy="#pay-reason"><svg width="14" height="14" aria-hidden="true"><use href="#i-copy"/></svg><span aria-live="polite" data-i18n="pay.copy">Копирай</span></button>
                   </div>
                 </dl>
-                <p class="pay-thanks" data-i18n="pay.thanks">Благодарим ти. Ще публикуваме снимки, когато подаръкът стигне до детето.</p>
+                <button type="button" class="btn btn-ghost pay-done" data-done><svg width="18" height="18" aria-hidden="true"><use href="#i-check"/></svg><span data-i18n="pay.done">Преведох</span></button>
               </div>
             </details>
+            <div class="thanks" data-thanks tabindex="-1" hidden>
+              <span class="thanks-mark" aria-hidden="true"><svg width="28" height="28"><use href="#i-heart"/></svg></span>
+              <p class="thanks-title" data-i18n="thanks.title">Благодарим ти!</p>
+              <p class="thanks-text" data-thanks-text>Тази Коледа едно дете ще бъде на топло — заради теб.</p>
+              <p class="thanks-sub" data-i18n="thanks.sub">Ще публикуваме снимки от раздаването преди Коледа. Сподели страницата и още едно дете може да получи подарък.</p>
+              <div class="thanks-actions">
+                <button type="button" class="btn btn-berry" data-share><span data-i18n="thanks.share">Сподели с приятел</span></button>
+                <button type="button" class="thanks-again" data-again data-i18n="thanks.again">Облечи още деца</button>
+              </div>
+            </div>
             <p class="offer-note" data-i18n="offer.note">Банков превод · Отнема 2 минути. Усещането остава много по-дълго.</p>
           </div>
 
@@ -430,7 +451,16 @@
     </div>
   </footer>
 
-  <script src="js/i18n.js"></script>
-  <script src="js/home.js"></script>
+  <!-- Mobile: primary action stays in the thumb zone -->
+  <div class="dock" data-dock>
+    <p class="dock-info">
+      <span class="dock-price"><b data-price>35 €</b> <span data-i18n="offer.per">на дете</span></span>
+      <span class="dock-count" data-countdown="short" hidden></span>
+    </p>
+    <a href="#offer" class="btn btn-berry" data-i18n="band.cta">Облечи едно дете</a>
+  </div>
+
+  <script src="js/i18n.js?v=20261112"></script>
+  <script src="js/home.js?v=20261112"></script>
 </body>
 </html>

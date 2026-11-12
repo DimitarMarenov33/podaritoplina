@@ -18,6 +18,8 @@
       'hero.eyebrow': 'Коледа 2026 · Пловдивска област',
       'count': 'Остават {n} дни до Коледа',
       'count.one': 'Остава {n} ден до Коледа',
+      'count.short': '{n} дни до Коледа',
+      'count.short.one': '{n} ден до Коледа',
       'hero.title': 'Тази Коледа облечи <em>едно дете</em> от Пловдивско в нови топли дрехи',
       'hero.lede': 'Някои деца в Пловдивска област ще посрещнат зимата без топло яке. С <b data-price>35 €</b> ти им даряваш нови топли дрехи и Библия. Ние ги купуваме, опаковаме и предаваме лично в ръцете на детето преди 25 декември.',
       'hero.proof1': '131 деца облечени миналата Коледа',
@@ -53,7 +55,10 @@
       'offer.k2': '2 деца',
       'offer.k3': '3 деца',
       'offer.k5': '5 деца',
-      'offer.cta': 'Облечи',
+      'offer.custom': 'Или въведи друга сума',
+      'offer.customPh': 'напр. 50…',
+      'offer.ctaKids': 'Облечи {kids} — {total}',
+      'offer.ctaAmount': 'Дари {total}',
       'offer.kid': '{n} дете',
       'offer.kids': '{n} деца',
       'offer.note': 'Банков превод · Отнема 2 минути. Усещането остава много по-дълго.',
@@ -66,7 +71,17 @@
       'pay.reason.value': 'Дарение Подари Топлина',
       'pay.copy': 'Копирай',
       'pay.copied': 'Копирано',
-      'pay.thanks': 'Благодарим ти. Ще публикуваме снимки, когато подаръкът стигне до детето.',
+      'pay.done': 'Преведох',
+
+      'thanks.title': 'Благодарим ти!',
+      'thanks.one': 'Тази Коледа едно дете ще бъде на топло — заради теб.',
+      'thanks.many': 'Тази Коледа {n} деца ще бъдат на топло — заради теб.',
+      'thanks.custom': 'Тази Коледа твоят подарък ще стигне до дете в нужда — заради теб.',
+      'thanks.sub': 'Ще публикуваме снимки от раздаването преди Коледа. Сподели страницата и още едно дете може да получи подарък.',
+      'thanks.share': 'Сподели с приятел',
+      'thanks.copied': 'Линкът е копиран',
+      'thanks.again': 'Облечи още деца',
+      'share.text': 'Тази Коледа облякох дете в нови топли дрехи с Подари Топлина. Присъедини се и ти:',
 
       'trust.title': 'Защо да ни се довериш',
       'trust.1.t': 'Регистрирана фондация',
@@ -144,6 +159,8 @@
       'hero.eyebrow': 'Christmas 2026 · Plovdiv Region',
       'count': 'Only {n} days until Christmas',
       'count.one': 'Only {n} day until Christmas',
+      'count.short': '{n} days to Christmas',
+      'count.short.one': '{n} day to Christmas',
       'hero.title': 'This Christmas, dress <em>one child</em> from the Plovdiv region in new warm clothes',
       'hero.lede': 'Some children in the Plovdiv region will face winter without a warm coat. For <b data-price>€35</b> you give one of them new warm clothes and a Bible. We buy them, wrap them and put them in the child’s hands ourselves before December 25.',
       'hero.proof1': '131 children dressed last Christmas',
@@ -179,7 +196,10 @@
       'offer.k2': '2 children',
       'offer.k3': '3 children',
       'offer.k5': '5 children',
-      'offer.cta': 'Dress',
+      'offer.custom': 'Or enter any amount',
+      'offer.customPh': 'e.g. 50…',
+      'offer.ctaKids': 'Dress {kids} — {total}',
+      'offer.ctaAmount': 'Give {total}',
       'offer.kid': '{n} child',
       'offer.kids': '{n} children',
       'offer.note': 'Bank transfer · Takes 2 minutes. The feeling lasts much longer.',
@@ -192,7 +212,17 @@
       'pay.reason.value': 'Donation Gift Warmth',
       'pay.copy': 'Copy',
       'pay.copied': 'Copied',
-      'pay.thanks': 'Thank you. We’ll publish photos when your gift reaches the child.',
+      'pay.done': 'I’ve sent it',
+
+      'thanks.title': 'Thank you!',
+      'thanks.one': 'This Christmas, a child will be warm — because of you.',
+      'thanks.many': 'This Christmas, {n} children will be warm — because of you.',
+      'thanks.custom': 'This Christmas, your gift will reach a child in need — because of you.',
+      'thanks.sub': 'We’ll publish photos of the handover before Christmas. Share this page and one more child could get a gift.',
+      'thanks.share': 'Share with a friend',
+      'thanks.copied': 'Link copied',
+      'thanks.again': 'Dress more children',
+      'share.text': 'This Christmas I dressed a child in new warm clothes with Gift Warmth. Join me:',
 
       'trust.title': 'Why you can trust us',
       'trust.1.t': 'Registered foundation',
@@ -285,9 +315,16 @@
     },
 
     apply() {
-      document.querySelectorAll('[data-i18n]').forEach((el) => { el.textContent = this.t(el.dataset.i18n); });
-      document.querySelectorAll('[data-i18n-html]').forEach((el) => { el.innerHTML = this.t(el.dataset.i18nHtml); });
-      document.querySelectorAll('[data-i18n-label]').forEach((el) => { el.setAttribute('aria-label', this.t(el.dataset.i18nLabel)); });
+      // A missing key keeps the Bulgarian text already in the HTML instead of printing the key.
+      const each = (attr, write) => document.querySelectorAll(`[data-${attr}]`).forEach((el) => {
+        const key = el.getAttribute(`data-${attr}`);
+        const value = this.t(key);
+        if (value !== key) write(el, value);
+      });
+      each('i18n', (el, v) => { el.textContent = v; });
+      each('i18n-html', (el, v) => { el.innerHTML = v; });
+      each('i18n-label', (el, v) => { el.setAttribute('aria-label', v); });
+      each('i18n-placeholder', (el, v) => { el.placeholder = v; });
       document.title = this.t('page.title');
       document.documentElement.lang = this.currentLang;
       document.querySelectorAll('.lang-btn').forEach((btn) => {
